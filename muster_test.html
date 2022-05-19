@@ -7,7 +7,29 @@
 </head>
 <body>
 <div class="handy-port">
-    <div class="grid-container">
+    <script>
+        const points = document.getElementsByClassName("point");
+
+        function mouseDown() {
+            for (const p of points) {
+                p.addEventListener("mouseover", (event) => {
+                    p.classList.add("point2");
+                    p.classList.remove("point");
+                });
+            }
+        }
+
+        function mouseUp() {
+            for (const p of points) {
+                p.addEventListener("mouseover", (event) => {
+                    p.classList.remove("point2");
+                    p.classList.add("point");
+                });
+            }
+        }
+    </script>
+
+    <div class="grid-container" onMouseDown="mouseDown()" onMouseUp="mouseUp()">
         <div class="grid-item">
             <div class="point" id="p1"></div>
         </div>
@@ -38,15 +60,11 @@
     </div>
 </div>
 
-<script>
-    const points = document.getElementsByClassName("point");
-    for (const p of points) {
-        p.addEventListener("mouseover", (event) => {
-            p.classList.add("point2");
-            p.classList.remove("point");
-        });
-    }
-</script>
+<div class="control">
+
+
+
+</div>
 
 </body>
 </html>
