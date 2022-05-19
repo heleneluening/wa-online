@@ -3,19 +3,34 @@ body {
     color: white;
 }
 
-.handy-port {
-    position: fixed;
+.screen {
+    width: 100%;
     height: 100%;
-    width: 57%; /* TODO 57% der Höhe */
 }
 
+.platzhalter {
+    height: 100%;
+    width: auto;
+    position: relative;
+}
+#linker_platzhalter {
+    float: left;
+}
+#rechter_platzhalter {
+    float: right;
+}
+
+/* Die Simulation des Handybildschirms */
+.handy-screen {
+    position: fixed;
+    height: 100%;
+    padding-right: 57%; /* TODO 57% der Höhe */
+}
+
+/* Der Musterkasten */
 .grid-container {
     position: absolute;
-    top: 100%;
-    left: 50%;
-    margin: -200px 0 0 -100px;
-    width: 200px;
-    height: 200px;
+    width: 100%;
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 10px;
@@ -23,6 +38,7 @@ body {
     padding: 10px;
 }
 
+/* Die Einzelnen Rasterelemente? */
 .grid-container > div {
     position: relative;
     text-align: center;
@@ -30,6 +46,7 @@ body {
     font-size: 30px;
 }
 
+/* Die Punkte des Musterfeldes */
 .point {
     position: absolute;
     top: 50%;
