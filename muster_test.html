@@ -14,17 +14,15 @@
             for (const p of points) {
                 p.addEventListener("mouseover", (event) => {
                     p.classList.add("point2");
-                    p.classList.remove("point");
                 });
             }
         }
 
         function mouseUp() {
             for (const p of points) {
-                p.addEventListener("mouseover", (event) => {
+
                     p.classList.remove("point2");
-                    p.classList.add("point");
-                });
+
             }
         }
     </script>
