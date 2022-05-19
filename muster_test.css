@@ -13,7 +13,7 @@ body {
     position: fixed;
     top: 75%;
     left: 50%;
-    margin-top: -50px
+    margin-top: -50px;
     margin-left: 100px;
     width: 200px;
     height: 200px;
@@ -38,6 +38,17 @@ body {
     left: 50%;
     border-radius: 50%;
     background-color: aqua;
+    height: 15px;
+    width: 15px;
+    margin: -7.5px 0 0 -7.5px;
+}
+
+.point2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background-color: yellow;
     height: 15px;
     width: 15px;
     margin: -7.5px 0 0 -7.5px;

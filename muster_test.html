@@ -37,5 +37,16 @@
         </div>
     </div>
 </div>
+
+<script>
+    const points = document.getElementsByClassName("point");
+    for (const p of points) {
+        p.addEventListener("mouseover", (event) => {
+            p.classList.add("point2");
+            p.classList.remove("point");
+        });
+    }
+</script>
+
 </body>
 </html>
