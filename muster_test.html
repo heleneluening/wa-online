@@ -1,18 +1,19 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!--TODO move javascript form html to its own .js-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Muster Test</title>
     <link rel="stylesheet" type="text/css" href="muster_test.css" media="screen"/>
 </head>
-<body>
+<body onMouseUp="mouseUp()">
+
 <div class="handy-port">
     <script>
-        const points = document.getElementsByClassName("point");
 
+        const points = document.getElementsByClassName("point");
         let mouseIsDown = false;
 
-        function colorChange(element) {
+        function colorChange(element) { <!--adds the .pointColour from css-->
             if (mouseIsDown) {
                 element.classList.add("pointColour")
             }
@@ -25,17 +26,17 @@
         function mouseUp() {
             mouseIsDown = false;
             for (const p of points) {
-                p.classList.remove("pointColour");
+                p.classList.remove("pointColour"); <!--removes the colour again-->
             }
         }
 
-        function pointClicked(element) {
+        function pointClicked(element) { <!--on click trigger colour change-->
             mouseIsDown = true;
             colorChange(element);
         }
     </script>
 
-    <div class="grid-container" onMouseDown="mouseDown()" onMouseUp="mouseUp()">
+    <div class="grid-container" onMouseDown="mouseDown()">
         <div class="grid-item">
             <div class="point" id="p1" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
@@ -66,10 +67,6 @@
     </div>
 </div>
 
-<div class="control">
-
-
-</div>
 
 </body>
 </html>
