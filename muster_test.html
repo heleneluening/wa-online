@@ -1,51 +1,72 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <!--TODO move javascript form html to its own .js-->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <!-- Viewport für responsive Design -->
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0">
-
     <title>Muster Test</title>
     <link rel="stylesheet" type="text/css" href="muster_test.css" media="screen"/>
 </head>
+<body onMouseUp="mouseUp()">
 
-<body>
-<div class="screen">
-    <div class="platzhalter" id="linker_platzhalter"></div>
-    <div class="handy-port" id="handy-div">
-        <div class="grid-container">
+<div class="handy-port">
+    <script>
+
+        const points = document.getElementsByClassName("point");
+        let mouseIsDown = false;
+
+        function colorChange(element) { <!--adds the .pointColour from css-->
+            if (mouseIsDown) {
+                element.classList.add("pointColour")
+            }
+        }
+
+        function mouseDown() {
+            mouseIsDown = true;
+        }
+
+        function mouseUp() {
+            mouseIsDown = false;
+            for (const p of points) {
+                p.classList.remove("pointColour"); <!--removes the colour again-->
+            }
+        }
+
+        function pointClicked(element) { <!--on click trigger colour change-->
+            mouseIsDown = true;
+            colorChange(element);
+        }
+    </script>
+
+    <div class="grid-container" onMouseDown="mouseDown()">
         <div class="grid-item">
-            <div class="point" id="p1"></div>
+            <div class="point" id="p1" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p2"></div>
+            <div class="point" id="p2" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p3"></div>
+            <div class="point" id="p3" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p4"></div>
+            <div class="point" id="p4" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p5"></div>
+            <div class="point" id="p5" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p6"></div>
+            <div class="point" id="p6" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p7"></div>
+            <div class="point" id="p7" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p8"></div>
+            <div class="point" id="p8" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p9"></div>
+            <div class="point" id="p9" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
     </div>
-    </div>
-    <div class="platzhalter" id="rechter_platzhalter"></div>
-</div> <!-- screen -->
+</div>
+
+
 </body>
-
 </html>

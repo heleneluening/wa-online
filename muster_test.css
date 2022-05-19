@@ -3,42 +3,28 @@ body {
     color: white;
 }
 
-.screen {
-    width: 100%;
-    height: 100%;
-}
-
-.platzhalter {
-    height: 100%;
-    width: auto;
-    position: relative;
-}
-#linker_platzhalter {
-    float: left;
-}
-#rechter_platzhalter {
-    float: right;
-}
-
-/* Die Simulation des Handybildschirms */
-.handy-screen {
+.handy-port {
     position: fixed;
     height: 100%;
-    padding-right: 57%; /* TODO 57% der Höhe */
+    width: 57%; /* TODO 57% der Höhe */
 }
 
-/* Der Musterkasten */
 .grid-container {
-    position: absolute;
-    width: 100%;
+    position: fixed;
+    top: 75%;
+    left: 50%;
+    margin-top: -50px;
+    margin-left: 100px;
+    width: 200px;
+    height: 200px;
     display: grid;
     grid-template-columns: auto auto auto;
     gap: 10px;
     background-color: grey;
     padding: 10px;
+    transform: translate(-50%,-50%);
 }
 
-/* Die Einzelnen Rasterelemente? */
 .grid-container > div {
     position: relative;
     text-align: center;
@@ -46,13 +32,23 @@ body {
     font-size: 30px;
 }
 
-/* Die Punkte des Musterfeldes */
 .point {
     position: absolute;
     top: 50%;
     left: 50%;
     border-radius: 50%;
     background-color: aqua;
+    height: 15px;
+    width: 15px;
+    margin: -7.5px 0 0 -7.5px;
+}
+
+.pointColour {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    background-color: red;
     height: 15px;
     width: 15px;
     margin: -7.5px 0 0 -7.5px;
