@@ -10,56 +10,63 @@
     <script>
         const points = document.getElementsByClassName("point");
 
-        function mouseDown() {
-            for (const p of points) {
-                p.addEventListener("mouseover", (event) => {
-                    p.classList.add("point2");
-                });
+        let mouseIsDown = false;
+
+        function colorChange(element) {
+            if (mouseIsDown) {
+                element.classList.add("pointRed")
             }
         }
 
+        function mouseDown() {
+            mouseIsDown = true;
+        }
+
         function mouseUp() {
+            mouseIsDown = false;
             for (const p of points) {
-
-                    p.classList.remove("point2");
-
+                p.classList.remove("pointRed");
             }
+        }
+
+        function pointClicked(element) {
+            mouseIsDown = true;
+            colorChange(element);
         }
     </script>
 
     <div class="grid-container" onMouseDown="mouseDown()" onMouseUp="mouseUp()">
         <div class="grid-item">
-            <div class="point" id="p1"></div>
+            <div class="point" id="p1" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p2"></div>
+            <div class="point" id="p2" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p3"></div>
+            <div class="point" id="p3" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p4"></div>
+            <div class="point" id="p4" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p5"></div>
+            <div class="point" id="p5" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p6"></div>
+            <div class="point" id="p6" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p7"></div>
+            <div class="point" id="p7" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p8"></div>
+            <div class="point" id="p8" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
         <div class="grid-item">
-            <div class="point" id="p9"></div>
+            <div class="point" id="p9" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
     </div>
 </div>
 
 <div class="control">
-
 
 
 </div>
