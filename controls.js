@@ -37,16 +37,17 @@ console.log(monsterHp); // check if it works
 
 
 function castMagic() { //drawing symbols to cast magic // different soloution ["p1","p2"].every(it => symbol.includes(it))
-
-    if (symbol.length === 3 && symbol.includes("p1") && symbol.includes("p2") && symbol.includes("p3")) { //symbole 1,2,3
+// [0] after symbol means 1 position in the array
+    if (symbol.length === 3 && symbol[0].includes("p1") && symbol[1].includes("p2")
+        && symbol[2].includes("p3")) { //symbole 1,2,3
         monsterHp = monsterHp - 1; //1 damage
         console.log(monsterHp); //monsterHp check
         symbol.length = 0; //delete the content of symbol array = reset
         death(); //if enemys has 0 hp he dies
     }
-    if (symbol.length === 5 && symbol.includes("p2") && symbol.includes("p4") && symbol.includes("p5")
-        && symbol.includes("p6") && symbol.includes("p8")) { //2,4,5,6,8 Lightning
-
+    if (symbol.length === 5 && symbol[0].includes("p2") && symbol[1].includes("p4")
+        && symbol[2].includes("p5") && symbol[3].includes("p6")
+        && symbol[4].includes("p8")) {//2,4,5,6,8 Lightning
         console.log("LightningBolt");
         monsterHp = monsterHp - 5; //5 damage
         console.log(monsterHp);
