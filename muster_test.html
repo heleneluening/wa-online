@@ -1,42 +1,22 @@
-<!DOCTYPE html> <!--TODO move javascript form html to its own .js-->
+<!--TODO Beachte .interface css, die 40% kann bei anderen geräten anders sein.
+
+-->
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charsets="UTF-8">
     <title>Muster Test</title>
     <link rel="stylesheet" type="text/css" href="muster_test.css" media="screen"/>
+    <script type="text/javascript" src="controls.js"></script>
+
 </head>
 <body onMouseUp="mouseUp()">
 
-<div class="handy-port">
-    <script>
 
-        const points = document.getElementsByClassName("point");
-        let mouseIsDown = false;
+<div class="interface" onmouseleave="mouseUp()"> <!--onmouseleave remove colour-->
 
-        function colorChange(element) { <!--adds the .pointColour from css-->
-            if (mouseIsDown) {
-                element.classList.add("pointColour")
-            }
-        }
-
-        function mouseDown() {
-            mouseIsDown = true;
-        }
-
-        function mouseUp() {
-            mouseIsDown = false;
-            for (const p of points) {
-                p.classList.remove("pointColour"); <!--removes the colour again-->
-            }
-        }
-
-        function pointClicked(element) { <!--on click trigger colour change-->
-            mouseIsDown = true;
-            colorChange(element);
-        }
-    </script>
-
-    <div class="grid-container" onMouseDown="mouseDown()">
+    <div class="grid-container" onMouseDown="mouseDown()"> <!--creates the control field-->
         <div class="grid-item">
             <div class="point" id="p1" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>

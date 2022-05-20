@@ -3,10 +3,10 @@ body {
     color: white;
 }
 
-.handy-port {
+.interface {
     position: fixed;
     height: 100%;
-    width: 57%; /* TODO 57% der Höhe */
+    width: 40%; /* 57% der Höhe,40% damit das interface auch auf der linken seite funktioniert */
 }
 
 .grid-container {
