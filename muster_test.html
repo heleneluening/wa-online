@@ -11,10 +11,9 @@
     <script type="text/javascript" src="controls.js"></script>
 
 </head>
-<body onMouseUp="mouseUp()">
+<body>
 
-
-<div class="interface" onmouseleave="mouseUp()"> <!--onmouseleave remove colour-->
+<div class="interface" onmouseleave="mouseUp()" onMouseUp="mouseUp()"> <!--onmouseleave remove colour-->
 
     <div class="grid-container" onMouseDown="mouseDown()"> <!--creates the control field-->
         <div class="grid-item">
