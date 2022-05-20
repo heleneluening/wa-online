@@ -6,7 +6,7 @@ body {
 .interface {
     position: fixed;
     height: 100%;
-    width: 40%; /* 57% der Höhe,40% damit das interface auch auf der linken seite funktioniert */
+    width: 40%; /* 57% der Höhe, 40% damit das interface auch auf der linken seite funktioniert */
 }
 
 .grid-container {

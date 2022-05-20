@@ -22,7 +22,7 @@ function mouseUp() { // mouseIsDown becomes false and it removes the added colou
     for (const p of points) {
         p.classList.remove("pointColour");
     }
-    symbol.length = 0;//delete symbols
+    symbol.length = 0;//delete array
 }
 
 function pointClicked(element) { // add colour if you click on a point
