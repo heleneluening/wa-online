@@ -64,6 +64,13 @@ function castMagic() { //drawing symbols to cast magic // [0] after symbol means
         symbol.length = 0; //delete the content of symbol array = reset
         death(); //if enemys has 0 hp he dies
     }//symbole 1,2,3
+    if (symbol.length === 3 && symbol[0].includes("p4") && symbol[1].includes("p5")
+        && symbol[2].includes("p6")) {
+        monsterHp = monsterHp - 1; //1 damage
+        console.log(monsterHp); //monsterHp check
+        symbol.length = 0; //delete the content of symbol array = reset
+        death(); //if enemys has 0 hp he dies
+    }//symbole 1,2,3
     if (symbol.length === 5 && symbol[0].includes("p2") && symbol[1].includes("p4")
         && symbol[2].includes("p5") && symbol[3].includes("p6")
         && symbol[4].includes("p8")) {
