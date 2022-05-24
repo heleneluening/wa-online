@@ -4,7 +4,8 @@ const symbol = []; //symbol array
 let monsterTyp = Math.floor(Math.random() * 5) + 1; //random monsterTyp between 1-5
 let playerHp = 20;
 let damageDealer = setInterval(playerLoseHp, 10000); //10000 = 10 Sekunden
-// TODO Change damageDealer so it starts with enemy spawn!!!
+let dps = 0;
+
 
 //IMPORTANT MAIN FUNCTIONS: colorChange, castMagic, and death
 
@@ -16,10 +17,10 @@ function colorChange(element) { //if mouseIsDown is true add new colour
 
         console.log(symbol);//test if the symbol is drawn correct
     }
-} //if mouseIsDown is true add new colour
+} //if mouseIsDown is true it adds new colour, mouseDown set mouseIsDown true
 
 function mouseDown() { //if mouse down mouseIsDown becomes true and triggers also colorChange
-    mouseIsDown = true;
+    mouseIsDown = true; // changes mouseIsDown to true so it will trigger the if in colorChange
 } //IDE says unused, but it is needed!!!
 
 function mouseUp() { // mouseIsDown becomes false and it removes the added colour
@@ -35,26 +36,30 @@ function pointClicked(element) { //add colour if you click on a point
     colorChange(element);
 } //add colour if you click on a point
 
-//from here are the symbols amd enemies
 function enemies() {
-    let randomiser = monsterTyp; //random monsterTyp
+    let randomiser = monsterTyp; //random monsterTyp = right now its just the Hp
     console.log(monsterTyp); // check if it works
-
+    //TODO work on monsters
     switch (randomiser) {
         case 1:
-            monsterTyp = 15;
-            break;
+            monsterTyp = 15; // How much Hp the enemy has
+            dps = 10; // How much damage the enemy deals
+            break; // break
         case 2:
             monsterTyp = 25
+            dps = 8;
             break;
         case 3:
             monsterTyp = 30
+            dps = 6;
             break
         case 4:
             monsterTyp = 35
+            dps = 4;
             break;
         case 5:
             monsterTyp = 40
+            dps = 2;
             break;
     } //randomised the enemy hp
 
@@ -112,13 +117,13 @@ function monsterDeath() { //function to check if monsterTyp = 0 => death
     }
 } //function to check if monsterTyp = 0 => death and no pc damage
 
-function endPcDamage(){
+function endPcDamage() {
     clearInterval(damageDealer);
-}
+} // clears the interval so damage cant be dealt anymore
 
 function playerLoseHp() { // deals -5 damage to player
 
-    playerHp = playerHp - 5;
+    playerHp = playerHp - dps;
 
     console.log(playerHp + " TEST 2"); // test
 
@@ -126,11 +131,13 @@ function playerLoseHp() { // deals -5 damage to player
         endPcDamage()
         console.log("YOU DIED")
     }
-}
+} // removes Hp of playerHp and checks if Hp is 0 = DEATH
 
 
 /*TODO create more Symbols and how much damage each deals
-    console.log() = are test functions delete after finish
-    the function playerLoseHp and variable playerHp and damageDealer are placeholder!!!
+    console.log() = are test functions delete after finish!!!
+    the function playerLoseHp and variable playerHp and damageDealer are placeholder
+    change monsterTyp so it doesnt stand also for Hp and not just which Typ is selected
+    Change damageDealer so it starts with enemy spawn!!!
 */
 
