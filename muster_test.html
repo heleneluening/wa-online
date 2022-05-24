@@ -1,43 +1,17 @@
-<!DOCTYPE html> <!--TODO move javascript form html to its own .js-->
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charsets="UTF-8">
     <title>Muster Test</title>
     <link rel="stylesheet" type="text/css" href="muster_test.css" media="screen"/>
+    <script type="text/javascript" src="controls.js"></script> <!--game controls-->
+
 </head>
-<body onMouseUp="mouseUp()">
+<body onload="enemies()"> <!--onload enemies Typ-->
 
-<div id="linker_platzhalter"></div>
-<div class="handy-port" id="middle_screen">
-    <script>
+<div class="interface" onmouseleave="mouseUp()" onMouseUp="mouseUp()"> <!--on mouseleave remove colour-->
 
-        const points = document.getElementsByClassName("point");
-        let mouseIsDown = false;
-
-        function colorChange(element) { <!--adds the .pointColour from css-->
-            if (mouseIsDown) {
-                element.classList.add("pointColour")
-            }
-        }
-
-        function mouseDown() {
-            mouseIsDown = true;
-        }
-
-        function mouseUp() {
-            mouseIsDown = false;
-            for (const p of points) {
-                p.classList.remove("pointColour"); <!--removes the colour again-->
-            }
-        }
-
-        function pointClicked(element) { <!--on click trigger colour change-->
-            mouseIsDown = true;
-            colorChange(element);
-        }
-    </script>
-
-    <div class="grid-container" onMouseDown="mouseDown()">
+    <div class="grid-container" onMouseDown="mouseDown()"> <!--creates the control field-->
         <div class="grid-item">
             <div class="point" id="p1" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
@@ -65,9 +39,9 @@
         <div class="grid-item">
             <div class="point" id="p9" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
-    </div>
+    </div> <!--creates the control field-->
 </div>
-<div id="rechter_platzhalter"></div>
+
 
 </body>
 </html>

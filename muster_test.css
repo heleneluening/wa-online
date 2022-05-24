@@ -3,11 +3,11 @@ body {
     color: white;
 }
 
-.handy-port {
+.interface {
     position: fixed;
     background-color: beige;
     height: 100%;
-    width: 57%; /* TODO 57% der Höhe */
+    width: 40%; /* 57% der Höhe, 40% damit das interface auch auf der linken seite funktioniert */
 }
 
 .platzhalter {
@@ -35,7 +35,7 @@ body {
     gap: 10px;
     background-color: grey;
     padding: 10px;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%, -50%);
 }
 
 .grid-container > div {
