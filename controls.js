@@ -3,7 +3,7 @@ let mouseIsDown = false;
 const symbol = []; //symbol array
 let monsterTyp = Math.floor(Math.random() * 5) + 1; //random monsterTyp between 1-5
 let playerHp = 20;
-let damageDealer = setInterval(playerLoseHp, 10000); //10000 = 10 Sekunden
+let damageDealer = setInterval(playerLoseHp, 10000); //10000 = 10 Sekunden TODO Change it so it starts with enemy spawn!!!
 
 //IMPORTANT MAIN FUNCTIONS: colorChange, castMagic, and death
 

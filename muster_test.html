@@ -9,8 +9,8 @@
 </head>
 <body onload="enemies()"> <!--onload enemies Typ-->
 
-<div class="interface" onMouseUp="mouseUp()" onmouseleave="mouseUp()"> <!--on mouseleave remove colour-->
 
+<main onMouseUp="mouseUp()" onmouseleave="mouseUp()">
     <div class="grid-container" onMouseDown="mouseDown()"> <!--creates the control field-->
         <div class="grid-item">
             <div class="point" id="p1" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
@@ -40,8 +40,7 @@
             <div class="point" id="p9" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
         </div>
     </div> <!--creates the control field-->
-</div>
 
-
+</main>
 </body>
 </html>
