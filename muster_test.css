@@ -1,12 +1,25 @@
 body {
-    background-color: black;
+    background-color: aquamarine;
     color: white;
 }
 
 .handy-port {
     position: fixed;
+    background-color: beige;
     height: 100%;
     width: 57%; /* TODO 57% der Höhe */
+}
+
+.platzhalter {
+    position: relative;
+    background-color: black;
+    height: 100vh;
+}
+#rechter_platzhalter {
+    float: right;
+}
+#linker_platzhalter {
+    float: left;
 }
 
 .grid-container {

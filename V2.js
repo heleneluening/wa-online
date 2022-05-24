@@ -5,15 +5,17 @@
 /***
  * TODO Doc
  */
+/*
 function startListening() {
 
     window.addEventListener('resize', resizeHandyPort, false);
     resizeHandyPort();
-}
+}*/
 
 /***
  * TODO Doc
  */
+/*
 function resizeHandyPort() {
 
     const linkerPlatzhalter = document.getElementById("linker_platzhalter");
@@ -31,3 +33,4 @@ function resizeHandyPort() {
     linkerPlatzhalter.style.width = String((window.innerWidth - handyPort.style.width) / 2);
 }
 
+*/
