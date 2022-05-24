@@ -2,6 +2,9 @@ const points = document.getElementsByClassName("point");
 let mouseIsDown = false;
 const symbol = []; //symbol array
 let monsterTyp = Math.floor(Math.random() * 5) + 1; //random monsterTyp between 1-5
+let playerHp = 20;
+let damageDealer = setInterval(playerLoseHp, 10000); //10000 = 10 Sekunden
+
 //IMPORTANT MAIN FUNCTIONS: colorChange, castMagic, and death
 
 function colorChange(element) { //if mouseIsDown is true add new colour
@@ -59,7 +62,7 @@ function enemies() {
 
 function castMagic() { //drawing symbols to cast magic, [0] after symbol means 1 position in the array
 
-     //symbole 6,5,4
+    //symbole 6,5,4
     if (symbol.length === 3 && symbol[0].includes("p6") && symbol[1].includes("p5")
         && symbol[2].includes("p4")) {
         monsterTyp = monsterTyp - 1; //1 damage
@@ -108,9 +111,20 @@ function death() { //function to check if monsterTyp = 0 => death
 } //function to check if monsterTyp = 0 => death
 
 
+function playerLoseHp() {
+    console.log(playerHp + " TEST 1");
+    playerHp = playerHp - 5;
+    console.log(playerHp + " TEST 2");
+
+    if (playerHp === 0) {
+        clearInterval(damageDealer);
+        console.log("YOU DIED")
+    }
+}
 
 
 /*TODO create more Symboles and how much damage each deals
     console.log() = are test functions delete after finish
     PlayerHp and damage to player
 */
+
