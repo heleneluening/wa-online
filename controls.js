@@ -3,7 +3,8 @@ let mouseIsDown = false;
 const symbol = []; //symbol array
 let monsterTyp = Math.floor(Math.random() * 5) + 1; //random monsterTyp between 1-5
 let playerHp = 20;
-let damageDealer = setInterval(playerLoseHp, 10000); //10000 = 10 Sekunden TODO Change it so it starts with enemy spawn!!!
+let damageDealer = setInterval(playerLoseHp, 10000); //10000 = 10 Sekunden
+// TODO Change damageDealer so it starts with enemy spawn!!!
 
 //IMPORTANT MAIN FUNCTIONS: colorChange, castMagic, and death
 
@@ -68,7 +69,7 @@ function castMagic() { //drawing symbols to cast magic, [0] after symbol means 1
         monsterTyp = monsterTyp - 1; //1 damage
         console.log(monsterTyp); //monsterTyp check
         symbol.length = 0; //delete the content of symbol array = reset
-        death(); //if enemys has 0 hp he dies
+        monsterDeath(); //if enemys has 0 hp he dies
     }
     //symbole 4,5,6
     if (symbol.length === 3 && symbol[0].includes("p4") && symbol[1].includes("p5")
@@ -76,7 +77,7 @@ function castMagic() { //drawing symbols to cast magic, [0] after symbol means 1
         monsterTyp = monsterTyp - 1; //1 damage
         console.log(monsterTyp); //monsterTyp check
         symbol.length = 0; //delete the content of symbol array = reset
-        death(); //if enemys has 0 hp he dies
+        monsterDeath(); //if enemys has 0 hp he dies
     }
     //2,4,5,6,8 Lightning
     if (symbol.length === 5 && symbol[0].includes("p2") && symbol[1].includes("p4")
@@ -86,7 +87,7 @@ function castMagic() { //drawing symbols to cast magic, [0] after symbol means 1
         monsterTyp = monsterTyp - 5; //5 damage
         console.log(monsterTyp);//test
         symbol.length = 0;//reset of array
-        death();
+        monsterDeath();
     }
     //1,4,7,8,9,6,3,2 Stone
     if (symbol.length === 8 && symbol[0].includes("p1") && symbol[1].includes("p4")
@@ -97,34 +98,39 @@ function castMagic() { //drawing symbols to cast magic, [0] after symbol means 1
         monsterTyp = monsterTyp - 7; //5 damage
         console.log(monsterTyp);//test
         symbol.length = 0;//reset of array
-        death();
+        monsterDeath();
     }
 
 
 } //drawing symbols to cast magic, [0] after symbol means 1 position in the array
 
-function death() { //function to check if monsterTyp = 0 => death
+function monsterDeath() { //function to check if monsterTyp = 0 => death
     if (monsterTyp <= 0) {
-        console.log("Killed");//test
-        symbol.length = 0;//reset of array
+        console.log("Killed"); //test
+        symbol.length = 0; //reset of array
+        endPcDamage(); //stops playerLoseHp so player don't lose life anymore
     }
-} //function to check if monsterTyp = 0 => death
+} //function to check if monsterTyp = 0 => death and no pc damage
 
+function endPcDamage(){
+    clearInterval(damageDealer);
+}
 
-function playerLoseHp() {
-    console.log(playerHp + " TEST 1");
+function playerLoseHp() { // deals -5 damage to player
+
     playerHp = playerHp - 5;
-    console.log(playerHp + " TEST 2");
 
-    if (playerHp === 0) {
-        clearInterval(damageDealer);
+    console.log(playerHp + " TEST 2"); // test
+
+    if (playerHp <= 0) { // if player hp falls to 0 clear intervall
+        endPcDamage()
         console.log("YOU DIED")
     }
 }
 
 
-/*TODO create more Symboles and how much damage each deals
+/*TODO create more Symbols and how much damage each deals
     console.log() = are test functions delete after finish
-    PlayerHp and damage to player
+    the function playerLoseHp and variable playerHp and damageDealer are placeholder!!!
 */
 
