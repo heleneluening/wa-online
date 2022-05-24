@@ -1,48 +1,51 @@
-body {
-    background-color: aquamarine;
+
+/* Responsive Design */
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    margin: 0;
+    padding: 0;
+    background-color: black;
     color: white;
 }
 
-.interface {
-    position: fixed;
+main {
+    box-sizing: border-box;
     background-color: beige;
     height: 100%;
-    width: 40%; /* 57% der Höhe, 40% damit das interface auch auf der linken seite funktioniert */
 }
 
-.platzhalter {
-    position: relative;
-    background-color: black;
-    height: 100vh;
-}
-#rechter_platzhalter {
-    float: right;
-}
-#linker_platzhalter {
-    float: left;
+@media (min-aspect-ratio: 9/16) { /* Legt das Seitenverhältnis ab einer gewissen Breite fest */
+    main {
+        width: 56vh;
+        margin: auto;
+        text-align: center;
+    }
 }
 
+    /* Muster Box */
 .grid-container {
     position: fixed;
-    top: 75%;
+    top: 100%;
     left: 50%;
-    margin-top: -50px;
-    margin-left: 100px;
-    width: 200px;
-    height: 200px;
+    margin-top: -15vh; /* halbe Breite/Höhe */
+    width: 30vh;
+    height: 30vh;
     display: grid;
     grid-template-columns: auto auto auto;
-    gap: 10px;
     background-color: grey;
-    padding: 10px;
     transform: translate(-50%, -50%);
 }
+
+/* Ende Responsive Design */
+
 
 .grid-container > div {
     position: relative;
     text-align: center;
-    padding: 20px 0;
-    font-size: 30px;
+    padding: 1em 0;
+    font-size: 1em;
 }
 
 .point {
@@ -51,9 +54,9 @@ body {
     left: 50%;
     border-radius: 50%;
     background-color: aqua;
-    height: 15px;
-    width: 15px;
-    margin: -7.5px 0 0 -7.5px;
+    height: 30%;
+    width: 30%;
+    margin: -15% 0 0 -15%;
 }
 
 .pointColour {
@@ -62,7 +65,7 @@ body {
     left: 50%;
     border-radius: 50%;
     background-color: red;
-    height: 15px;
-    width: 15px;
-    margin: -7.5px 0 0 -7.5px;
+    height: 30%;
+    width: 30%;
+    margin: -15% 0 0 -15%;
 }
