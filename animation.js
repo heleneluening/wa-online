@@ -1,7 +1,18 @@
 let id = null;
 
 function myMove() { //movement of #myAnimation
-    let elem = document.getElementById("myAnimation");
+    let elem;
+    elem = document.getElementById("myAnimation");
+    switch (spellChoice) {
+        case 1:
+            console.log("TEST 1") // elem = document.getElementById("myAnimation");?
+            elem.style.backgroundColor = "black"; // changes colour from spell
+            break;
+        case 2:
+            console.log("TEST 2") // elem = document.getElementById("myAnimation");
+            elem.style.backgroundColor = "red";
+            break;
+    }
     let pos = 65; // change pos it so it works everywhere
     elem.style.top = pos + 'vh';
     elem.style.visibility = "visible"; //makes the spell visible
@@ -22,5 +33,6 @@ function myMove() { //movement of #myAnimation
 
 /*
 TODO more elements that work at the same time so you could spam a spell
+ more spells and that a diffrent animation comes if you cast a different spell
 */
 
