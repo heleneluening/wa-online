@@ -7,10 +7,12 @@ function myMove() { //movement of #myAnimation
         case 1:
             console.log("TEST 1") // elem = document.getElementById("myAnimation");?
             elem.style.backgroundColor = "black"; // changes colour from spell
+            elem.style.borderRadius = "10%";
             break;
         case 2:
             console.log("TEST 2") // elem = document.getElementById("myAnimation");
             elem.style.backgroundColor = "red";
+            elem.style.borderRadius = "100%";
             break;
     }
     let pos = 65; // change pos it so it works everywhere
