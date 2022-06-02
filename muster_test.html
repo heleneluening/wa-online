@@ -5,41 +5,43 @@
     <title>Muster Test</title>
     <link rel="stylesheet" type="text/css" href="muster_test.css" media="screen"/>
     <script type="text/javascript" src="controls.js"></script> <!--game controls-->
+    <script type="text/javascript" src="animation.js"></script> <! -- game animation-->
+
 
 </head>
-<body onload="enemies()"> <!--onload enemies Typ move it somewhere else l8er-->
-
+<body> <!--onload enemies Typ move it somewhere else l8er-->
 
 <main onMouseUp="mouseUp()" onmouseleave="mouseUp()">
-    <div id ="myAnimation"></div></div>
-
-    <div class="grid-container" onMouseDown="mouseDown()"> <!--creates the control field-->
-        <div class="grid-item">
-            <div class="point" id="p1" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
-        </div>
-        <div class="grid-item">
-            <div class="point" id="p2" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
-        </div>
-        <div class="grid-item">
-            <div class="point" id="p3" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
-        </div>
-        <div class="grid-item">
-            <div class="point" id="p4" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
-        </div>
-        <div class="grid-item">
-            <div class="point" id="p5" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
-        </div>
-        <div class="grid-item">
-            <div class="point" id="p6" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
-        </div>
-        <div class="grid-item">
-            <div class="point" id="p7" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
-        </div>
-        <div class="grid-item">
-            <div class="point" id="p8" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
-        </div>
-        <div class="grid-item">
-            <div class="point" id="p9" onmouseover="colorChange(this)" onmousedown="pointClicked(this)"></div>
+    <div id ="myAnimation"></div>
+    <div id="muster-container">
+        <div class="grid-container" onMouseDown="mouseDown()" onmouseup="mouseUp()"> <!--creates the control field-->
+            <div class="grid-item">
+                <div class="point" id="1" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+            </div>
+            <div class="grid-item">
+                <div class="point" id="2" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+            </div>
+            <div class="grid-item">
+                <div class="point" id="3" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+            </div>
+            <div class="grid-item">
+                <div class="point" id="4" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+            </div>
+            <div class="grid-item">
+                <div class="point" id="5" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+            </div>
+            <div class="grid-item">
+                <div class="point" id="6" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+            </div>
+            <div class="grid-item">
+                <div class="point" id="7" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+            </div>
+            <div class="grid-item">
+                <div class="point" id="8" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+            </div>
+            <div class="grid-item">
+                <div class="point" id="9" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+            </div>
         </div>
     </div> <!--creates the control field-->
 
