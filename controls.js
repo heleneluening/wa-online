@@ -1,7 +1,6 @@
 const points = document.getElementsByClassName("point");
 let mouseIsDown = false;
 const symbol = []; //symbol array
-
 let monsterTyp = Math.floor(Math.random() * 5) + 1; //random monsterTyp between 1-5
 let playerHp = 20; //maybe change?
 let damageDealer = setInterval(playerLoseHp, 10000); //10000 = 10 seconds an interval for playerdamage
@@ -36,7 +35,7 @@ function pointClicked(element) { //add colour if you click on a point
     colorChange(element);
 } //add colour if you click on a point
 
-//TODO Move the following into its own js? It has nothing to do with controls, change monsterTyp to hp
+//TODO Move the following into its own js? It has nothing to do with controls
 
 function enemies() {
     let randomiser = monsterTyp; //random monsterTyp = right now its just the Hp
@@ -71,26 +70,29 @@ function enemies() {
 function castMagic() { //drawing symbols to cast magic, [0] after symbol means 1 position in the array
 
     //symbole 6,5,4
-        if (symbol.length === 3 && symbol[0].includes("p6") && symbol[1].includes("p5") && symbol[2].includes("p4")) {
+    if (symbol.length === 3 && symbol[0].includes("p6") && symbol[1].includes("p5") && symbol[2].includes("p4")) {
         monsterTyp = monsterTyp - 1; //1 damage
         console.log(monsterTyp); //monsterTyp check
         symbol.length = 0; //delete the content of symbol array = reset
         monsterDeath(); //if enemys has 0 hp he dies
+        myMove(); //animation
     }
     //symbole 4,5,6
-        if (symbol.length === 3 && symbol[0].includes("p4") && symbol[1].includes("p5") && symbol[2].includes("p6")) {
+    if (symbol.length === 3 && symbol[0].includes("p4") && symbol[1].includes("p5") && symbol[2].includes("p6")) {
         monsterTyp = monsterTyp - 1; //1 damage
         console.log(monsterTyp); //monsterTyp check
         symbol.length = 0; //delete the content of symbol array = reset
         monsterDeath(); //if enemys has 0 hp he dies
     }
     //2,4,5,6,8 Lightning
-        if (symbol.length === 5 && symbol[0].includes("p2") && symbol[1].includes("p4") && symbol[2].includes("p5") && symbol[3].includes("p6") && symbol[4].includes("p8")) {
+    if (symbol.length === 5 && symbol[0].includes("p2") && symbol[1].includes("p4") && symbol[2].includes("p5") && symbol[3].includes("p6") && symbol[4].includes("p8")) {
         console.log("LightningBolt");
         monsterTyp = monsterTyp - 5; //5 damage
         console.log(monsterTyp);//test
         symbol.length = 0;//reset of array
         monsterDeath();
+        myMove();
+
 
         //1,4,7,8,9,6,3,2 Stone
         if (symbol.length === 8 && symbol[0].includes("p1") && symbol[1].includes("p4") && symbol[2].includes("p7") && symbol[3].includes("p8") && symbol[4].includes("p9") && symbol[5].includes("p6") && symbol[6].includes("p3") && symbol[7].includes("p2")) {
@@ -99,6 +101,8 @@ function castMagic() { //drawing symbols to cast magic, [0] after symbol means 1
             console.log(monsterTyp);//test
             symbol.length = 0;//reset of array
             monsterDeath();
+            myMove();
+
         }
     }
 
@@ -128,6 +132,7 @@ function playerLoseHp() { // deals -5 damage to player
     }
 } // removes Hp of playerHp and checks if Hp is 0 = DEATH
 
+
 /*
 let a = 0; // TRY OUT
 let check = 0;
@@ -155,6 +160,34 @@ function trytest() { // castMagic in easier maybe
 }
  */
 
+
+let id = null;
+let pos = 0;
+
+function myMove() { //movement of #myAnimation
+    let elem = document.getElementById("myAnimation");
+    let pos = 0; // change pos it so it works everywhere
+    elem.style.top = pos + 'vh';
+    elem.style.visibility = "visible";
+    clearInterval(id);
+    id = setInterval(frame, 10);// 10 - 20
+    function frame() {
+        if (pos === 95) { // change == "x" that it change
+            clearInterval(id);
+            elem.style.visibility = "hidden";
+            collision();
+        } else {
+            pos++;
+            elem.style.top = pos + 'vh';
+            elem.style.left = pos - 'vw'; // not (needed)
+        }
+    }
+}
+
+function collision(){
+    console.log("Hit")
+
+}
 
 /*TODO create more Symbols and how much damage each deals
     console.log() = are test functions delete after finish!!!

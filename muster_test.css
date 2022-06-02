@@ -69,3 +69,16 @@ main {
     width: 30%;
     margin: -15% 0 0 -15%;
 }
+
+
+#myAnimation {
+    width: 5vh;
+    height: 5vh;
+    margin: auto;
+    position: relative;
+    border-radius: 50%;
+    background-color: blue;
+    z-index: 4;
+    visibility: hidden;
+}
+
