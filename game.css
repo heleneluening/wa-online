@@ -26,6 +26,25 @@ main {
     }
 }
 
+/* connection lines */
+line {
+    visibility: visible;
+    stroke-width: 1;
+    stroke: white;
+}
+
+#muster-container {
+    position: fixed;
+    top: 100%;
+    left: 50%;
+    margin-top: -15vh; /* halbe Breite/Höhe */
+    width: 30vh;
+    height: 30vh;
+    background-color: darkgray;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+}
+
 /* Muster Box */
 .grid-container {
     position: fixed;
@@ -46,9 +65,9 @@ main {
 /* Divs der Punkte des Musters */
 .grid-container > div {
     position: relative;
+    width: 10vh;
+    height: 10vh;
     text-align: center;
-    padding: 1em 0;
-    font-size: 1em;
     z-index: 1;
 }
 
@@ -75,3 +94,5 @@ main {
     margin: -15% 0 0 -15%;
     z-index: 1;
 }
+
+

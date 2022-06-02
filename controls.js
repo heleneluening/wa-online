@@ -6,31 +6,43 @@ const points = document.getElementsByClassName("point");
 // Maus als nicht geklickt festsetzten
 let mouseIsDown = false;
 
+// * Symbole
+
+// symbollib: ein array, dass alle Symbole sammelt
+const symbolLib = [];
+
+class symbol {
+
+    /**
+     * Constructor Symbol Klasse
+     * @param type Typ des Symbols, bedingt welche funktion es triggert
+     * @param pattern Muster des Symbols
+     * jedes Symbol wird im constructor der Symbollib angefügt
+     */
+    constructor(type, pattern) {
+        this.type = type;
+        this.pattern = pattern;
+        symbolLib.push(this);
+    }
+}
+
+const symLineRight1 = new symbol("LineRight", [4, 5, 6]);
+const symLineRight3 = new symbol("LineRight", [7, 8, 9]);
+const symLineLeft1 = new symbol( "LineLeft", [3, 2, 1]);
+const symLineLeft2 = new symbol("LineLeft", [6, 5, 4]);
+const symLineLeft3 = new symbol("LineLeft", [9, 8, 7]);
+const symLineDown1 = new symbol("LineDown", [1, 4, 7]);
+const symLineDown2 = new symbol("LineDown", [2, 5, 8]);
+const symLineDown3 = new symbol("LineDown", [3, 6, 9]);
+const symLineUp1 = new symbol("LineUp", [7, 4, 1]);
+const symLineUp2 = new symbol("LineUp", [8, 5, 2]);
+const symLineUp3 = new symbol("LineUp", [9, 6, 3]);
+const symLightning = new symbol("LightningAttack", [2, 4, 5, 6, 8]);
+const symIce = new symbol("IceAttack", [5, 4, 8, 6, 2]);
+const symEarth = new symbol("GroundAttack", [4, 7, 5, 9, 6]);
+
 // Leeres Inputsymbol definieren
-const symInput = {type: "InputEmpty", pattern: []};//symbol array
-
-// Symbole definieren
-const symLineRight1 =  {type: "LineRight", pattern: [1, 2, 3]};
-const symLineRight2 = {type: "LineRight", pattern: [4, 5, 6]};
-const symLineRight3 = {type: "LineRight", pattern: [7, 8, 9]};
-const symLineLeft1 = {type: "LineLeft", pattern: [3, 2, 1]};
-const symLineLeft2 = {type: "LineLeft", pattern: [6, 5, 4]};
-const symLineLeft3 = {type: "LineLeft", pattern: [9, 8, 7]};
-const symLineDown1 = {type: "LineDown", pattern: [1, 4, 7]};
-const symLineDown2 = {type: "LineDown", pattern: [2, 5, 8]};
-const symLineDown3 = {type: "LineDown", pattern: [3, 6, 9]};
-const symLineUp1 = {type: "LineUp", pattern: [7, 4, 1]};
-const symLineUp2 = {type: "LineUp", pattern: [8, 5, 2]};
-const symLineUp3 = {type: "LineUp", pattern: [9, 6, 3]};
-const symLightning = {type: "Lightning", pattern: [2, 4, 5, 6, 8]};
-const symStone = {type: "Stone", pattern: [1, 4, 7, 8, 9, 6, 3, 2]};
-
-// Symbole in der Symbollib sammeln
-const symbolLib =   [symLineLeft1, symLineLeft2, symLineLeft3,
-                    symLineRight1, symLineRight2, symLineRight3,
-                    symLineDown1,symLineDown2, symLineDown3,
-                    symLineUp1, symLineUp2, symLineUp3,
-                    symLightning, symStone];
+const symInput = new symbol("InputEmpty", []);
 
 
 //*** Methods
@@ -47,6 +59,9 @@ function pointSelect(element) {
     if (mouseIsDown) {
         element.classList.add("pointColour");
         symInput.pattern.push(element.id);
+        if (symInput.pattern.length >= 2) {
+            connectPoints();
+        }
     }
 }
 
@@ -124,15 +139,22 @@ function castMagic() {
                 // TODO spLineDown();
                 console.log("spLineDown()"); // TODO Debug
                 break;
-            case "Lightning":
-                // TODO spLightning();
-                console.log("spLightning()"); // TODO Debug
+            case "LightningAttack":
+                // TODO spLightningAttack();
+                console.log("spLightningAttack()"); // TODO Debug
                 break;
-            case "Stone":
-                // TODO spStone();
-                console.log("spStone()"); // TODO Debug
+            case "IceAttack":
+                // TODO spIceAttack();
+                console.log("spIceAttack()"); // TODO Debug
+                break;
+            case "GroundAttack":
+                // TODO spGroundAttack();
+                console.log("spGroundAttack()"); // TODO Debug
                 break;
         }
+    }
+    else {
+        console.log("Symbol not valid.");
     }
 }
 
@@ -156,3 +178,90 @@ function compareSymbols(symbol1, symbol2) {
     return ausgabe;
 }
 
+function connectPoints() {
+    // TODO test connects p4 and p2
+
+    let p1 = translateToPoint(symInput.pattern[(symInput.pattern.length - 2)]);
+    let p2 = translateToPoint(symInput.pattern[(symInput.pattern.length - 1)]);
+
+    let top, left, height, width;
+    let rotation = false;
+    let horizontal = false;
+
+    // Berechnung von top und height in vh
+    if (p1.y <= p2.y) {
+        top = (p1.y * 10 - 5); // ein Kasten ist 10vh groß, -5 um den Mittelpunkt zu fassen
+        height = ((p2.y - p1.y) * 10);
+    } else {
+        top = (p2.y * 10 - 5);
+        height = ((p1.y - p2.y) * 10);
+    }
+
+    // Berechnung von left und width in vh
+    if (p1.x <= p2.x) {
+        left = (p1.x * 10 - 5);
+        width = ((p2.x - p1.x) * 10);
+    } else {
+        left = (p2.x * 10 -5);
+        width = ((p2.x - p1.x) * 10);
+    }
+
+    // Bestimmung der rotation
+    if ((p1.x < p2.x && p1.y < p2.y) || (p1.x > p2.x && p1.y > p2.y)) {
+        rotation = true;
+    } else if (p1.x == p2.x && p1.y == p2.y) {
+        horizontal = true;
+    }
+
+
+
+
+}
+
+/**
+ * translate to point: translates index of the point to coordinates
+ * @param index des punktes
+ * @returns {{x: number, y: number}} x und y Koordinate
+ */
+function translateToPoint(index) {
+    let point = {x: 0, y: 0};
+
+    switch (index) {
+        case 1:
+            point.x = 1;
+            point.y = 1;
+            break;
+        case 2:
+            point.x = 2;
+            point.y = 1
+            break;
+        case 3:
+            point.x = 3;
+            point.y = 1;
+            break;
+        case 4:
+            point.x = 1;
+            point.y = 2;
+            break;
+        case 5:
+            point.x = 2;
+            point.y = 2;
+            break;
+        case 6:
+            point.x = 3;
+            point.y = 2;
+            break;
+        case 7:
+            point.x = 1;
+            point.y = 3;
+            break;
+        case 8:
+            point.x = 2;
+            point.y = 3;
+            break;
+        case 9:
+            point.x = 3;
+            point.y = 3;
+    }
+    return point;
+}
