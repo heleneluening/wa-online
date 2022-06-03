@@ -36,6 +36,7 @@ main {
     grid-template-columns: auto auto auto;
     background-color: grey;
     transform: translate(-50%, -50%);
+    z-index: 4;
 }
 
 /* Ende Responsive Design */
@@ -46,6 +47,13 @@ main {
     text-align: center;
     padding: 1em 0;
     font-size: 1em;
+    user-drag: none; /* makes the container un-draggable */
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
 }
 
 .point {
@@ -71,13 +79,13 @@ main {
 }
 
 
-#myAnimation {
+.myAnimation {
     width: 5vh;
     height: 5vh;
     margin: auto;
-    position: relative;
+    position: sticky;
     border-radius: 50%;
     background-color: blue;
-    z-index: 4;
     visibility: hidden;
+    z-index: 4;
 }

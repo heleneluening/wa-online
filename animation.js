@@ -1,8 +1,15 @@
 let id = null;
+let test = [];
+let elem;
 
-function myMove() { //movement of #myAnimation
-    let elem;
-    elem = document.getElementById("myAnimation");
+
+function myMove() { //movement and style changing of #myAnimation
+    elem = document.createElement("div");
+
+    elem.className = "myAnimation";
+    let mainelem = document.getElementsByTagName("main");
+    mainelem.item(0).appendChild(elem);
+
     switch (spellChoice) {
         case 1:
             console.log("TEST 1") // elem = document.getElementById("myAnimation");?
@@ -15,25 +22,34 @@ function myMove() { //movement of #myAnimation
             elem.style.borderRadius = "100%";
             break;
     }
-    let pos = 65; // change pos it so it works everywhere
-    elem.style.top = pos + 'vh';
-    elem.style.visibility = "visible"; //makes the spell visible
+    elem.setAttribute("pos", "65"); // change pos it so it works everywhere
+    elem.style.top = '65 vh';
+    test.push(elem);
     clearInterval(id);
     id = setInterval(frame, 10);// 10 - 20
-    function frame() {
-        if (pos === -5) {
-            clearInterval(id);
-            elem.style.visibility = "hidden"; // hides the spell after it reaches it target
-        } else {
-            pos--;
-            elem.style.top = pos + 'vh';
-            elem.style.left = pos - 'vw'; // not (needed)
-        }
-    }
+
+
+
 }
 
+function frame() {
+    for (let i = 0; i < test.length; i++) {
+        if (test[i].getAttribute("pos") <= 0) {
+            test[i].remove();
+            test.shift();
+            //elem.style.visibility = "hidden"; // hides the spell after it reaches it target
+        } else {
+            test[i].setAttribute("pos", test[i].getAttribute("pos")-1);
+            test[i].style.top = test[i].getAttribute("pos") + 'vh';
 
-/*
-TODO more elements that work at the same time so you could spam a spell
-*/
+            elem.style.visibility = "visible"; //makes the spell visible
+        }
+        //elem.style.top = pos + 'vh';
+        //elem.style.left = pos - 'vw'; // not (needed)
+    }
+
+    if (test.length === 0) {
+        clearInterval(id);
+    }
+}
 
