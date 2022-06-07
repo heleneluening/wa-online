@@ -1,5 +1,7 @@
+//Spell animation
+
 let id = null;
-let test = [];
+let spellCount = []; // counts how often an symbol was drawn right
 let elem;
 
 
@@ -10,42 +12,45 @@ function myMove() { //movement and style changing of #myAnimation
     let mainelem = document.getElementsByTagName("main");
     mainelem.item(0).appendChild(elem);
 
-    switch (spellChoice) {
+    switch (spellChoice) { // each case changes the style of the spell
         case 1:
             console.log("TEST 1")
             elem.style.backgroundColor = "black"; // changes colour from spell
-            elem.style.borderRadius = "10%";
+            elem.style.borderRadius = "10%"; // changes form of spell
             break;
         case 2:
             console.log("TEST 2")
             elem.style.backgroundColor = "red";
             elem.style.borderRadius = "100%";
             break;
+        case 3:
+            console.log("TEST 3")
+            elem.style.backgroundColor = "green";
+            elem.style.borderRadius = "10%";
     }
-    elem.setAttribute("pos", "65");
-    elem.style.top = '65 vh';
-    test.push(elem);
-    clearInterval(id);
+    elem.setAttribute("pos", "65"); // start postion of spell
+    elem.style.top = '65 vh'; // pos
+    spellCount.push(elem);
+    clearInterval(id); // stops the interval if missing the spell gets faster for each spell cast
     id = setInterval(frame, 10);// 10 - 20
 
 
 }
 
 function frame() {
-    for (let i = 0; i < test.length; i++) {
-        if (test[i].getAttribute("pos") <= 0) {
-            test[i].remove();
-            test.shift();
+    for (let i = 0; i < spellCount.length; i++) {
+        if (spellCount[i].getAttribute("pos") <= 0) { // checks if the "spell" reached it target 0 for interface end
+            spellCount[i].remove(); // removes the object
+            spellCount.shift();
 
-        } else {
-            test[i].setAttribute("pos", test[i].getAttribute("pos")-1);
-            test[i].style.top = test[i].getAttribute("pos") + 'vh';
-
-            elem.style.visibility = "visible"; //makes the spell visible
+        } else { // if the spell isn't on it end position it will move
+            spellCount[i].setAttribute("pos", spellCount[i].getAttribute("pos")-1);
+            spellCount[i].style.top = spellCount[i].getAttribute("pos") + 'vh'; // changes the postion of the object ny 1vh
+            elem.style.visibility = "visible"; // makes the spell visible
         }
     }
 
-    if (test.length === 0) {
+    if (spellCount.length === 0) { // when the spell reaches it
         clearInterval(id);
     }
 }

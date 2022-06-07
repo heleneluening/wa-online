@@ -1,5 +1,5 @@
 
-/* Responsive Design */
+/* Responsive Design for Pc */
 
 html, body {
     height: 100vh;
@@ -80,6 +80,17 @@ main {
 
 
 .myAnimation {
+    width: 5vh;
+    height: 5vh;
+    margin: auto;
+    position: sticky;
+    border-radius: 50%;
+    background-color: blue;
+    visibility: hidden;
+    z-index: 4;
+}
+
+.enemyMovement {
     width: 5vh;
     height: 5vh;
     margin: auto;
