@@ -1,4 +1,4 @@
-//Spell animation
+//Spell animations
 
 let id = null;
 let spellCount = []; // counts how often an symbol was drawn right
