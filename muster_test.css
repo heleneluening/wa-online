@@ -96,9 +96,10 @@ main {
     margin: auto;
     position: relative;
     border-radius: 0%;
-    background-color: red;
     visibility: hidden;
     z-index: 4;
+    content:url(bubble-g2aa0f3b2b_640.png); /* add picture and url of the picture in project*/
+
 }
 
 
@@ -114,4 +115,6 @@ main {
     background-color: red;
     visibility: visible;
     z-index: 1;
+
 }
+
