@@ -8,14 +8,12 @@ html, body {
     padding: 0;
     background-color: black;
     color: white;
-    z-index: 0;
 }
 
 main {
     box-sizing: border-box;
     background-color: beige;
     height: 100%;
-    z-index: 0;
 }
 
 @media (min-aspect-ratio: 9/16) { /* Legt das Seitenverhältnis ab einer gewissen Breite fest */
@@ -57,7 +55,6 @@ line {
     grid-template-columns: auto auto auto;
     background-color: grey;
     transform: translate(-50%, -50%);
-    z-index: 1;
 }
 
 /* Ende Responsive Design */
@@ -65,10 +62,16 @@ line {
 /* Divs der Punkte des Musters */
 .grid-container > div {
     position: relative;
-    width: 10vh;
-    height: 10vh;
     text-align: center;
-    z-index: 1;
+    padding: 1em 0;
+    font-size: 1em;
+    user-drag: none; /* makes the container un-draggable */
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+
 }
 
 .point {
@@ -80,7 +83,6 @@ line {
     height: 30%;
     width: 30%;
     margin: -15% 0 0 -15%;
-    z-index: 1;
 }
 
 .pointColour {
@@ -92,7 +94,27 @@ line {
     height: 30%;
     width: 30%;
     margin: -15% 0 0 -15%;
-    z-index: 1;
 }
 
 
+.myAnimation {
+    width: 5vh;
+    height: 5vh;
+    margin: auto;
+    position: sticky;
+    border-radius: 50%;
+    background-color: blue;
+    visibility: hidden;
+    z-index: 4;
+}
+
+.enemyMovement {
+    width: 5vh;
+    height: 5vh;
+    margin: auto;
+    position: sticky;
+    border-radius: 50%;
+    background-color: blue;
+    visibility: hidden;
+    z-index: 4;
+}
