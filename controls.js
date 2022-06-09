@@ -128,44 +128,54 @@ function castMagic() {
             case "LineLeft":
                 //TODO spLineLeft();
                 console.log("spLineLeft()"); // TODO Debug
-                spellChoice = 1;
-                myMove();
+                spellChoice = 1; //decides which spell css style is used (animation.js) and how much damage the enemy gets (enemy.js)
+                myMove(); // animation.js function for  animation of spells
+                enemyLife() // function for damage to enemys in enemy.js
+
+                enemyAttack() // enemy attack animation move somewhere else
+
                 break;
             case "LineRight":
                 // TODO spLineRight();
                 console.log("spLineRight()"); // TODO Debug
-                spellChoice = 2;
+                spellChoice = 1;
                 myMove();
+                enemyLife()
                 break;
             case "LineUp":
                 // TODO spLineUp();
                 console.log("spLineRight()"); // TODO Debug
-                spellChoice = 3;
+                spellChoice = 1;
                 myMove();
+                enemyLife()
                 break;
             case "LineDown":
                 // TODO spLineDown();
                 console.log("spLineDown()"); // TODO Debug
-                spellChoice = 4;
+                spellChoice = 1;
                 myMove();
+                enemyLife()
                 break;
             case "LightningAttack":
                 // TODO spLightningAttack();
                 console.log("spLightningAttack()"); // TODO Debug
-                spellChoice = 5;
+                spellChoice = 2;
                 myMove();
+                enemyLife()
                 break;
             case "IceAttack":
                 // TODO spIceAttack();
                 console.log("spIceAttack()"); // TODO Debug
-                spellChoice = 6;
+                spellChoice = 3;
                 myMove();
+                enemyLife()
                 break;
             case "GroundAttack":
                 // TODO spGroundAttack();
                 console.log("spGroundAttack()"); // TODO Debug
-                spellChoice = 7;
+                spellChoice = 4;
                 myMove();
+                enemyLife()
                 break;
         }
     } else {

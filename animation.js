@@ -14,18 +14,19 @@ function myMove() { //movement and style changing of #myAnimation
     switch (spellChoice) { // each case changes the style of the spell
         case 1:
             console.log("TEST 1")
-            elem.style.backgroundColor = "black"; // changes colour from spell
-            elem.style.borderRadius = "10%"; // changes form of spell
+            elem.style.backgroundColor = "red"; // changes colour from spell
+            elem.style.borderRadius = "0%"; // changes form of spell
             break;
         case 2:
             console.log("TEST 2")
-            elem.style.backgroundColor = "red";
+            elem.style.backgroundColor = "yellow";
             elem.style.borderRadius = "100%";
             break;
         case 3:
             console.log("TEST 3")
             elem.style.backgroundColor = "green";
             elem.style.borderRadius = "10%";
+            break
     }
     elem.setAttribute("pos", "65"); // start postion of spell
     elem.style.top = '65 vh'; // pos
@@ -38,7 +39,7 @@ function myMove() { //movement and style changing of #myAnimation
 
 function frame() {
     for (let i = 0; i < spellCount.length; i++) {
-        if (spellCount[i].getAttribute("pos") <= 0) { // checks if the "spell" reached it target 0 for interface end
+        if (spellCount[i].getAttribute("pos") <= 5) { // checks if the "spell" reached it target 0 for interface end
             spellCount[i].remove(); // removes the object
             spellCount.shift();
 

@@ -4,10 +4,11 @@
     <meta charsets="UTF-8">
     <title>Muster Test</title>
     <link rel="stylesheet" type="text/css" href="muster_test.css" media="screen"/>
-    <script type="text/javascript" src="controls.js"></script> <!--game controls-->
-    <script type="text/javascript" src="animation.js"></script>
+    <script type="text/javascript" src="controls.js"></script> <!-- Main Game controls-->
+    <script type="text/javascript" src="animation.js"></script> <!-- Spell animation-->
+    <script type="text/javascript" src="enemy.js"></script> <!-- Enemy main-->
 
-    <script type="text/javascript" src="boss.js"></script>
+    <script type="text/javascript" src="enemyAnimation.js"></script><!-- Enemy animation-->
 
 
 </head>
@@ -16,10 +17,9 @@
 <main onmouseup="mouseUp()" onmouseleave="mouseUp()">
     <div id="myAnimation"></div>
 
+    <div id="enemyMovement"></div>
 
-    <!--<div id="enemyMovement"></div>
-    <button onclick="myBoss()">Click Me</button>-->
-
+    <div class="myEnemy"></div>
 
     <div id="muster-container">
         <div class="grid-container" onMouseDown="mouseDown()" onmouseup="mouseUp()"> <!--creates the control field-->

@@ -11,7 +11,7 @@ html, body {
 
 main {
     box-sizing: border-box;
-    background-color: beige;
+    background-color: darkblue;
     height: 100%;
 }
 
@@ -97,6 +97,21 @@ main {
     position: relative;
     border-radius: 0%;
     background-color: red;
-    visibility: visible;
+    visibility: hidden;
     z-index: 4;
+}
+
+
+.myEnemy {
+    width: 10vh;
+    height: 10vh;
+    margin: auto;
+    position: absolute;
+    top: 1%;
+    right: 45%;
+    left: 45%;
+    border-radius: 100%;
+    background-color: red;
+    visibility: visible;
+    z-index: 1;
 }
