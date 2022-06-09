@@ -29,9 +29,10 @@ class symbol {
     }
 }
 
-const symLineRight1 = new symbol("LineRight", [4, 5, 6]);
+const symLineRight1 = new symbol("LineRight", [1, 2, 3]);
+const symLineRight2 = new symbol("LineRight", [4, 5, 6]);
 const symLineRight3 = new symbol("LineRight", [7, 8, 9]);
-const symLineLeft1 = new symbol( "LineLeft", [3, 2, 1]);
+const symLineLeft1 = new symbol("LineLeft", [3, 2, 1]);
 const symLineLeft2 = new symbol("LineLeft", [6, 5, 4]);
 const symLineLeft3 = new symbol("LineLeft", [9, 8, 7]);
 const symLineDown1 = new symbol("LineDown", [1, 4, 7]);
@@ -48,6 +49,7 @@ const symEarth = new symbol("GroundAttack", [4, 7, 5, 9, 6]);
 const symInput = new symbol("InputEmpty", []);
 
 console.log(symbolLib);
+
 //*** Methods
 /**
  * pointSelect: Selects Points
@@ -166,8 +168,7 @@ function castMagic() {
                 myMove();
                 break;
         }
-    }
-    else {
+    } else {
         console.log("Symbol not valid.");
     }
 }

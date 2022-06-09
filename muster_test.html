@@ -5,14 +5,22 @@
     <title>Muster Test</title>
     <link rel="stylesheet" type="text/css" href="muster_test.css" media="screen"/>
     <script type="text/javascript" src="controls.js"></script> <!--game controls-->
-    <script type="text/javascript" src="animation.js"></script> <! -- game animation-->
+    <script type="text/javascript" src="animation.js"></script>
+
+    <script type="text/javascript" src="boss.js"></script>
 
 
 </head>
 <body> <!--onload enemies Typ move it somewhere else l8er-->
 
-<main onmouseup="mouseUp()"  onmouseleave="mouseUp()">
-    <div id ="myAnimation"></div>
+<main onmouseup="mouseUp()" onmouseleave="mouseUp()">
+    <div id="myAnimation"></div>
+
+
+    <!--<div id="enemyMovement"></div>
+    <button onclick="myBoss()">Click Me</button>-->
+
+
     <div id="muster-container">
         <div class="grid-container" onMouseDown="mouseDown()" onmouseup="mouseUp()"> <!--creates the control field-->
             <div class="grid-item">

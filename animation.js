@@ -4,7 +4,6 @@ let id = null;
 let spellCount = []; // counts how often an symbol was drawn right
 let elem;
 
-
 function myMove() { //movement and style changing of #myAnimation
 
     elem = document.createElement("div");
@@ -32,7 +31,7 @@ function myMove() { //movement and style changing of #myAnimation
     elem.style.top = '65 vh'; // pos
     spellCount.push(elem);
     clearInterval(id); // stops the interval if missing the spell gets faster for each spell cast
-    id = setInterval(frame, 10);// 10 - 20
+    id = setInterval(frame, 100);// 10 - 20
 
 
 }
@@ -44,7 +43,7 @@ function frame() {
             spellCount.shift();
 
         } else { // if the spell isn't on it end position it will move
-            spellCount[i].setAttribute("pos", spellCount[i].getAttribute("pos")-1);
+            spellCount[i].setAttribute("pos", spellCount[i].getAttribute("pos") - 1);
             spellCount[i].style.top = spellCount[i].getAttribute("pos") + 'vh'; // changes the postion of the object ny 1vh
             elem.style.visibility = "visible"; // makes the spell visible
         }

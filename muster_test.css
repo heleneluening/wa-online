@@ -1,4 +1,3 @@
-
 /* Responsive Design */
 
 html, body {
@@ -16,7 +15,8 @@ main {
     height: 100%;
 }
 
-@media (min-aspect-ratio: 9/16) { /* Legt das Seitenverhältnis ab einer gewissen Breite fest */
+@media (min-aspect-ratio: 9/16) {
+    /* Legt das Seitenverhältnis an einer gewissen Breite fest */
     main {
         width: 56vh;
         margin: auto;
@@ -87,16 +87,16 @@ main {
     border-radius: 50%;
     background-color: blue;
     visibility: hidden;
-    z-index: 4;
 }
 
-.enemyMovement {
+
+#enemyMovement {
     width: 5vh;
     height: 5vh;
     margin: auto;
-    position: sticky;
-    border-radius: 50%;
-    background-color: blue;
-    visibility: hidden;
+    position: relative;
+    border-radius: 0%;
+    background-color: red;
+    visibility: visible;
     z-index: 4;
 }
