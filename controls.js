@@ -235,8 +235,8 @@ function castMagic() {
 
 /**
  * compareSymbols: compares two symbols, return true/false
- * @param symbol1 ein Array mit 9 werten
- * @param symbol2 ein Array mit 9 werten
+ * @param symbol1 ein Array mit 9 Werten
+ * @param symbol2 ein Array mit 9 Werten
  */
 function compareSymbols(symbol1, symbol2) {
     let ausgabe = false;

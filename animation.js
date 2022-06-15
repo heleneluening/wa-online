@@ -1,7 +1,7 @@
 //Spell animations
 
 let id = null;
-let spellCount = []; // counts how often an symbol was drawn right
+let spellCount = []; // counts how often a symbol was drawn right
 let elem;
 
 function myMove() { //movement and style changing of #myAnimation

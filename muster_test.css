@@ -1,4 +1,4 @@
-/* Responsive Design */
+/* Responsive Design  */
 
 html, body {
     height: 100vh;
@@ -97,7 +97,7 @@ main {
     border-radius: 0;
     visibility: hidden;
     z-index: 4;
-    content: url(bubble-g2aa0f3b2b_640.png); /* add picture and url of the picture in project*/
+    content: url(bubble.png); /* add picture and url of the picture in project*/
 
 }
 

@@ -1,25 +1,25 @@
 let enemyHp = 100;
 
-
 function enemyDamage() {
     switch (spellChoice) {
         case 1: // Slash
             enemyHp = enemyHp - 10; // change number for different damage
-            break
+            break;
         case 2: // Lightning
             enemyHp = enemyHp - 15;
-            break
+            break;
         case 3: // Ice
             enemyHp = enemyHp - 20;
-            break
+            break;
         case 4: // Ground
             enemyHp = enemyHp - 25;
-            break
+            break;
     }
     console.log(enemyHp);
-    if (enemyHp >= 0)
+    if (enemyHp >= 0) {
         enemyHealthUpdate(); // updates the enemyHp
-    enemyDeath();
+        enemyDeath();
+    }
 }
 
 function enemyHealthUpdate() {
@@ -29,15 +29,15 @@ function enemyHealthUpdate() {
 function enemyDeath() { // TODO add more things that should happen
     if (enemyHp <= 0) {
         let enemy = document.querySelector(".myEnemy"); //TODO change the things that should happen
-        enemy.style.backgroundColor = "pink";
+        enemy.style.backgroundColor = "green";
         console.log("enemy died");
-        enemyHp = 100
+        enemyHp = 100;
         enemyHealthUpdate();
 
     }
 }
 
 function enemyAttack() {
-    console.log("TEST ENEMY ANIMATION")
-    enemyWalks()
+    console.log("TEST ATTACK");
+    enemyWalks();
 }
