@@ -1,3 +1,60 @@
+let start = false;
+let tutorial = false;
+let quit = false;
+let testing = false;
+
+function test() {
+    testing = true;
+}
+
+function gameStart() {
+    start = true;
+    gameMenu();
+}
+
+function gameQuit() {
+    quit = true;
+    gameMenu();
+}
+
+function gameTutorial() {
+    tutorial = true;
+    gameMenu()
+}
+
+function gameMenu() {
+
+    let menuGame = document.getElementById("gameMain");
+    let menuStart = document.getElementById("gameStart");
+    let menuTutorial = document.getElementById("gameTutorial");
+    let menuQuit = document.getElementById("gameQuit");
+
+    if (start) { //game start
+        menuGame.style.visibility = "visible"
+        menuStart.remove(); // removes the div so they dont take space
+        menuTutorial.remove();
+        menuQuit.remove();
+    }
+
+    if (tutorial) { //tutroial
+        console.log("Tutorial")
+        menuStart.remove();
+        menuTutorial.remove();
+        menuQuit.remove();
+
+    }
+
+    if (quit) { //quit
+        window.close();
+    }
+
+    if (testing) {
+        console.log("TEST")
+
+    }
+}
+
+
 //*** Initiation Gamestyle:
 
 //Spell choice
@@ -130,7 +187,6 @@ function castMagic() {
                 console.log("spLineLeft()"); // TODO Debug
                 spellChoice = 1; //decides which spell css style is used (animation.js) and how much damage the enemy gets (enemy.js)
                 myMove(); // animation.js function for  animation of spells
-                enemyLife() // function for damage to enemys in enemy.js
 
                 enemyAttack() // enemy attack animation move somewhere else
 
@@ -140,42 +196,36 @@ function castMagic() {
                 console.log("spLineRight()"); // TODO Debug
                 spellChoice = 1;
                 myMove();
-                enemyLife()
                 break;
             case "LineUp":
                 // TODO spLineUp();
                 console.log("spLineRight()"); // TODO Debug
                 spellChoice = 1;
                 myMove();
-                enemyLife()
                 break;
             case "LineDown":
                 // TODO spLineDown();
                 console.log("spLineDown()"); // TODO Debug
                 spellChoice = 1;
                 myMove();
-                enemyLife()
                 break;
             case "LightningAttack":
                 // TODO spLightningAttack();
                 console.log("spLightningAttack()"); // TODO Debug
                 spellChoice = 2;
                 myMove();
-                enemyLife()
                 break;
             case "IceAttack":
                 // TODO spIceAttack();
                 console.log("spIceAttack()"); // TODO Debug
                 spellChoice = 3;
                 myMove();
-                enemyLife()
                 break;
             case "GroundAttack":
                 // TODO spGroundAttack();
                 console.log("spGroundAttack()"); // TODO Debug
                 spellChoice = 4;
                 myMove();
-                enemyLife()
                 break;
         }
     } else {

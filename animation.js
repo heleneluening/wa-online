@@ -32,7 +32,7 @@ function myMove() { //movement and style changing of #myAnimation
     elem.style.top = '65 vh'; // pos
     spellCount.push(elem);
     clearInterval(id); // stops the interval if missing the spell gets faster for each spell cast
-    id = setInterval(frame, 100);// 10 - 20
+    id = setInterval(frame, 10);// 10 - 20
 
 
 }
@@ -42,6 +42,8 @@ function frame() {
         if (spellCount[i].getAttribute("pos") <= 5) { // checks if the "spell" reached it target 0 for interface end
             spellCount[i].remove(); // removes the object
             spellCount.shift();
+
+            enemyDamage(); // deals damage to the enemy
 
         } else { // if the spell isn't on it end position it will move
             spellCount[i].setAttribute("pos", spellCount[i].getAttribute("pos") - 1);

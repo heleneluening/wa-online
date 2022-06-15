@@ -12,47 +12,59 @@
 
 
 </head>
-<body> <!--onload enemies Typ move it somewhere else l8er-->
+<body onload="enemyHealth()"> <!--TODO onload enemies hp move it somewhere else l8er-->
 
 <main onmouseup="mouseUp()" onmouseleave="mouseUp()">
-    <div id="myAnimation"></div>
 
-    <div id="enemyMovement"></div>
+    <div id="mainMenu">
+        <div id="gameStart" onclick="gameStart()">Start</div> <!-- main menu-->
+        <div id="gameTutorial" onclick="gameTutorial()">Tutorial</div>
+        <div id="gameQuit" onclick="gameQuit()">Exit</div>
+    </div>
 
-    <div class="myEnemy"></div>
 
-    <div id="muster-container">
-        <div class="grid-container" onMouseDown="mouseDown()" onmouseup="mouseUp()"> <!--creates the control field-->
-            <div class="grid-item">
-                <div class="point" id="1" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
-            </div>
-            <div class="grid-item">
-                <div class="point" id="2" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
-            </div>
-            <div class="grid-item">
-                <div class="point" id="3" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
-            </div>
-            <div class="grid-item">
-                <div class="point" id="4" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
-            </div>
-            <div class="grid-item">
-                <div class="point" id="5" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
-            </div>
-            <div class="grid-item">
-                <div class="point" id="6" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
-            </div>
-            <div class="grid-item">
-                <div class="point" id="7" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
-            </div>
-            <div class="grid-item">
-                <div class="point" id="8" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
-            </div>
-            <div class="grid-item">
-                <div class="point" id="9" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
-            </div>
-        </div>
-    </div> <!--creates the control field-->
+    <div id="gameMain"> <!-- div for whole game-->
 
+        <div id="myAnimation"></div> <!-- player spell animation-->
+        <div id="enemyMovement"></div> <!-- enemy spells-->
+        <div class="myEnemy"></div> <!-- enemy-->
+
+        <h1> HP: <span id="eHp"></span></h1> <!-- enemy hp-->
+
+
+        <div id="muster-container">
+            <div class="grid-container" onMouseDown="mouseDown()" onmouseup="mouseUp()">
+                <!--creates the control field-->
+                <div class="grid-item">
+                    <div class="point" id="1" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+                </div>
+                <div class="grid-item">
+                    <div class="point" id="2" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+                </div>
+                <div class="grid-item">
+                    <div class="point" id="3" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+                </div>
+                <div class="grid-item">
+                    <div class="point" id="4" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+                </div>
+                <div class="grid-item">
+                    <div class="point" id="5" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+                </div>
+                <div class="grid-item">
+                    <div class="point" id="6" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+                </div>
+                <div class="grid-item">
+                    <div class="point" id="7" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+                </div>
+                <div class="grid-item">
+                    <div class="point" id="8" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+                </div>
+                <div class="grid-item">
+                    <div class="point" id="9" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+                </div>
+            </div>
+        </div><!--creates the control field-->
+    </div>
 </main>
 </body>
 </html>
