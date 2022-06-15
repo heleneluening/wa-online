@@ -115,7 +115,7 @@ main {
     z-index: 1;
 }
 
-#mainMenu {
+#mainMenu { /* TODO make it responisve*/
     position: center;
 }
 

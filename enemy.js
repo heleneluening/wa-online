@@ -18,21 +18,26 @@ function enemyDamage() {
     }
     console.log(enemyHp);
     if (enemyHp >= 0)
-    enemyHealth(); // updates the enemyHp
+        enemyHealthUpdate(); // updates the enemyHp
     enemyDeath();
 }
 
-function enemyHealth() {
+function enemyHealthUpdate() {
     document.getElementById("eHp").innerHTML = enemyHp;
 }
 
 function enemyDeath() { // TODO add more things that should happen
     if (enemyHp <= 0) {
-    console.log("enemy died");
+        let enemy = document.querySelector(".myEnemy"); //TODO change the things that should happen
+        enemy.style.backgroundColor = "pink";
+        console.log("enemy died");
+        enemyHp = 100
+        enemyHealthUpdate();
+
     }
 }
 
-function enemyAttack(){
+function enemyAttack() {
     console.log("TEST ENEMY ANIMATION")
     enemyWalks()
 }
