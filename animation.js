@@ -43,7 +43,7 @@ function frame() {
             spellCount[i].remove(); // removes the object
             spellCount.shift();
 
-            enemyDamage(); // deals damage to the enemy
+            enemyTakesDamage(); // deals damage to the enemy
 
         } else { // if the spell isn't on it end position it will move
             spellCount[i].setAttribute("pos", spellCount[i].getAttribute("pos") - 1);

@@ -7,12 +7,12 @@
     <script type="text/javascript" src="controls.js"></script> <!-- Main Game controls-->
     <script type="text/javascript" src="animation.js"></script> <!-- Spell animation-->
     <script type="text/javascript" src="enemy.js"></script> <!-- Enemy main-->
-
+    <script type="text/javascript" src="player.js"></script> <!-- player main-->
     <script type="text/javascript" src="enemyAnimation.js"></script><!-- Enemy animation-->
 
 
 </head>
-<body onload="enemyHealthUpdate()"> <!--TODO onload enemies hp move it somewhere else l8er-->
+<body onload="enemyHealthUpdate(); playerHealthUpdate()" > <!--TODO onload enemies hp move it somewhere else l8er-->
 
 <main onmouseup="mouseUp()" onmouseleave="mouseUp()">
 
@@ -30,6 +30,8 @@
         <div class="myEnemy"></div> <!-- enemy-->
 
         <h1> HP: <span id="eHp"></span></h1> <!-- enemy hp-->
+        <h2> HP: <span id="pHp"></span></h2> <!-- enemy hp-->
+
 
 
         <div id="muster-container">

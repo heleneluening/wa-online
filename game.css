@@ -135,3 +135,9 @@ h1 {
     top: 1vh;
 }
 
+h2 {
+    position: absolute;
+    font-size: 4vh;
+    top: 20vh;
+}
+

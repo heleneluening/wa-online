@@ -2,7 +2,7 @@
 let ident = null;
 let position = 5;
 let enemyInterval = 1000; // how often enemy attacks
-let enemyDps
+let enemyDps;
 
 function startOfAttacks() {
     enemyDps = setInterval(enemyCasts, enemyInterval)
@@ -26,6 +26,7 @@ function enemyCasts() {
             position = 5;
             clearInterval(ident);
             startOfAttacks();
+            playerHealth(); // player damage
         } else {
             position++;
             enemyMovement.style.top = position + 'vh';

@@ -1,5 +1,5 @@
-let enemyHp = 100;
-
+let enemyHp;
+let enemyDamage;
 
 function whichEnemy() {
 
@@ -12,25 +12,31 @@ function whichEnemy() {
             enemy.style.backgroundColor = "green";
             enemy.style.width = 15 + "vh";
             enemy.style.height = 15 + "vh";
+            enemyInterval = 1000; // TODO balance the attack speed
+            enemyDamage = 10
             break;
         case 2:
             enemyHp = 150;
             enemy.style.backgroundColor = "blue";
             enemy.style.width = 20 + "vh";
             enemy.style.height = 20 + "vh";
+            enemyInterval = 5000;
+            enemyDamage = 10;
             break;
         case 3:
             enemyHp = 200;
-            enemy.style.backgroundColor = "red";
+            enemy.style.backgroundColor = "darkred";
             enemy.style.width = 25 + "vh";
             enemy.style.height = 25 + "vh";
+            enemyInterval = 10000;
+            enemyDamage = 25;
             break;
-    }
+    } // which enemy spawns
     enemyHealthUpdate();
 
 }
 
-function enemyDamage() {
+function enemyTakesDamage() {
     switch (spellChoice) {
         case 1: // Slash
             enemyHp = enemyHp - 10; // change number for different damage
@@ -47,7 +53,7 @@ function enemyDamage() {
     }
 
     enemyDeath();
-  enemyHealthUpdate(); // updates the enemyHp
+    enemyHealthUpdate(); // updates the enemyHp
 
 }
 
@@ -56,11 +62,11 @@ function enemyHealthUpdate() {
 }
 
 function enemyDeath() { // TODO add more things that should happen
-        if (enemyHp <= 0) {
-            enemyHp = 0; // set to 0 so it will enver show negative Hp
-            whichEnemy(); // new enemy
-            clearInterval()
-        }
+    if (enemyHp <= 0) {
+        enemyHp = 0; // set to 0 so it will enver show negative Hp
+        whichEnemy(); // new enemy
+        clearInterval()
+    }
 }
 
 function enemyAttack() {
