@@ -1,13 +1,8 @@
 let start = false;
 let tutorial = false;
 let quit = false;
-let testing = false;
 
-function test() {
-    testing = true;
-}
-
-function gameStart() {
+function gameStart() { // checks if start was clicked
     start = true;
     gameMenu();
 }
@@ -22,7 +17,7 @@ function gameTutorial() {
     gameMenu()
 }
 
-function gameMenu() {
+function gameMenu() { // gameMenu
 
     let menuGame = document.getElementById("gameMain");
     let menuStart = document.getElementById("gameStart");
@@ -30,8 +25,10 @@ function gameMenu() {
     let menuQuit = document.getElementById("gameQuit");
 
     if (start) { //game start
-        menuGame.style.visibility = "visible"
-        menuStart.remove(); // removes the div so they dont take space
+        menuGame.style.visibility = "visible" // makes the game visible = game start
+        whichEnemy(); // whichEnemy spawn
+        startOfAttacks(); // start the attacks of the enemy
+        menuStart.remove(); // removes the div so they don't take space
         menuTutorial.remove();
         menuQuit.remove();
     }
@@ -46,11 +43,6 @@ function gameMenu() {
 
     if (quit) { //quit
         window.close();
-    }
-
-    if (testing) {
-        console.log("TEST")
-
     }
 }
 

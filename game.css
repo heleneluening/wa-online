@@ -112,7 +112,7 @@ main {
     left: 45%;
     border-radius: 100%;
     background-color: red;
-    z-index: 1;
+    z-index: 10;
 }
 
 #mainMenu { /* TODO make it responisve*/

@@ -1,14 +1,22 @@
 // animation for enemy movement
 let ident = null;
 let position = 5;
+let enemyInterval = 1000; // how often enemy attacks
+let enemyDps
+
+function startOfAttacks() {
+    enemyDps = setInterval(enemyCasts, enemyInterval)
+}
 
 
-function enemyWalks() {
+
+function enemyCasts() {
 
     let enemyMovement;
     enemyMovement = document.getElementById("enemyMovement");
     console.log("TEST 4")
-    ident = setInterval(movement, 100);
+    clearInterval(enemyDps);
+    ident = setInterval(movement, 10);
 
     function movement() {
 
@@ -17,6 +25,7 @@ function enemyWalks() {
             console.log("TEST END")
             position = 5;
             clearInterval(ident);
+            startOfAttacks();
         } else {
             position++;
             enemyMovement.style.top = position + 'vh';
@@ -26,20 +35,3 @@ function enemyWalks() {
         }
     }
 }
-
-
-/* function goLeft() {
-     movement = document.getElementById("enemyMovement");
-     if (positionLeft >= 90) {
-          console.log("TEST Start")
-          clearInterval(ident);
-          position = 5;
-
-      } else {
-          positionLeft++;
-          movement.style.top = positionLeft + '%';
-         movement.style.right = positionLeft + '%';
-
-         console.log("Work " + positionLeft);
-      }
-}*/
