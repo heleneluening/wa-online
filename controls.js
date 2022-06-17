@@ -19,10 +19,10 @@ function gameTutorial() {
 
 function gameMenu() { // gameMenu
 
-    let menuGame = document.getElementById("gameMain");
     let menuStart = document.getElementById("gameStart");
     let menuTutorial = document.getElementById("gameTutorial");
     let menuQuit = document.getElementById("gameQuit");
+    let menuGame = document.getElementById("gameMain");
 
     if (start) { //game start
         menuGame.style.visibility = "visible" // makes the game visible = game start
@@ -245,8 +245,5 @@ function compareSymbols(symbol1, symbol2) {
     return ausgabe;
 }
 
-/*
-TODO Enemies + movement of them + and spellcasting
-*/
 
 

@@ -9,11 +9,9 @@ function startOfAttacks() {
 }
 
 
-
 function enemyCasts() {
 
-    let enemyMovement;
-    enemyMovement = document.getElementById("enemyMovement");
+    let enemyMovement = document.getElementById("enemyMovement");
     console.log("TEST 4")
     clearInterval(enemyDps);
     ident = setInterval(movement, 10);
