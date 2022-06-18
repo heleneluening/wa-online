@@ -15,7 +15,7 @@
 <body onload="enemyHealthUpdate(); playerHealthUpdate()" > <!--TODO onload enemies hp move it somewhere else l8er-->
 
 <main onmouseup="mouseUp()" onmouseleave="mouseUp()">
-
+<div
     <div id="mainMenu">
         <div id="gameStart" onclick="gameStart()">Start</div> <!-- main menu-->
         <div id="gameTutorial" onclick="gameTutorial()">Tutorial</div>
@@ -27,7 +27,8 @@
 
         <div id="myAnimation"></div> <!-- player spell animation-->
         <div id="enemyMovement"></div> <!-- enemy spells-->
-        <div class="myEnemy"></div> <!-- enemy-->
+        <div class="myEnemy"><div class="boeseAugen1"></div><div class="boeseAugen2"></div></div> <!-- enemy-->
+
 
         <h1> HP: <span id="eHp"></span></h1> <!-- enemy hp-->
         <h2> HP: <span id="pHp"></span></h2> <!-- enemy hp-->
@@ -66,7 +67,7 @@
                 </div>
             </div>
         </div><!--creates the control field-->
-    </div>
+    </div>></div>
 </main>
 </body>
 </html>

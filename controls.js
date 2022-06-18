@@ -177,7 +177,7 @@ function castMagic() {
             case "LineLeft":
                 //TODO spLineLeft();
                 console.log("spLineLeft()"); // TODO Debug
-                spellChoice = 1; //decides which spell css style is used (animation.js) and how much damage the enemy gets (enemy.js)
+                spellChoice = 0; //decides which spell css style is used (animation.js) and how much damage the enemy gets (enemy.js)
                 myMove(); // animation.js function for  animation of spells
 
                 enemyAttack() // enemy attack animation move somewhere else
@@ -186,37 +186,37 @@ function castMagic() {
             case "LineRight":
                 // TODO spLineRight();
                 console.log("spLineRight()"); // TODO Debug
-                spellChoice = 1;
+                spellChoice = "Slash";
                 myMove();
                 break;
             case "LineUp":
                 // TODO spLineUp();
                 console.log("spLineRight()"); // TODO Debug
-                spellChoice = 1;
+                spellChoice = "Slash";
                 myMove();
                 break;
             case "LineDown":
                 // TODO spLineDown();
                 console.log("spLineDown()"); // TODO Debug
-                spellChoice = 1;
+                spellChoice = "Slash";
                 myMove();
                 break;
             case "LightningAttack":
                 // TODO spLightningAttack();
                 console.log("spLightningAttack()"); // TODO Debug
-                spellChoice = 2;
+                spellChoice = "Lightning";
                 myMove();
                 break;
             case "IceAttack":
                 // TODO spIceAttack();
                 console.log("spIceAttack()"); // TODO Debug
-                spellChoice = 3;
+                spellChoice = "Ice";
                 myMove();
                 break;
             case "GroundAttack":
                 // TODO spGroundAttack();
                 console.log("spGroundAttack()"); // TODO Debug
-                spellChoice = 4;
+                spellChoice = "Ground";
                 myMove();
                 break;
         }

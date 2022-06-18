@@ -12,21 +12,32 @@ function myMove() { //movement and style changing of #myAnimation
     mainelem.item(0).appendChild(elem);
 
     switch (spellChoice) { // each case changes the style of the spell
-        case 1:
+        case "Slash":
             console.log("TEST 1")
-            elem.style.backgroundColor = "red"; // changes colour from spell
+            elem.style.backgroundColor = "blue"; // changes colour from spell
             elem.style.borderRadius = "0%"; // changes form of spell
             break;
-        case 2:
+        case "Lightning":
             console.log("TEST 2")
             elem.style.backgroundColor = "yellow";
             elem.style.borderRadius = "100%";
+            elem.style.width = "30%";
+            elem.style.height = "400%";
             break;
-        case 3:
+        case "Ice":
             console.log("TEST 3")
-            elem.style.backgroundColor = "green";
-            elem.style.borderRadius = "10%";
-            break
+            elem.style.backgroundColor = "white";
+            elem.style.borderRadius = "100%";
+            elem.style.width = "30%";
+            elem.style.height = "15%";
+            break;
+      case "Ground":
+        console.log("TEST 4")
+        elem.style.backgroundColor ="#664008";
+        elem.style.borderRadius = "20%"
+        elem.style.height ="30%";
+        elem.style.width = "100%";
+        break;
     }
     elem.setAttribute("pos", "65"); // start postion of spell
     elem.style.top = '65 vh'; // pos

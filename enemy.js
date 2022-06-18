@@ -1,7 +1,7 @@
 let enemyHp;
 let enemyDamage;
 let enemyDeathCount = 0;
-
+const vh = (document.body.clientHeight / 100);
 function whichEnemy() {
 
     let enemy = document.querySelector(".myEnemy"); //TODO change the things that should happen
@@ -10,26 +10,20 @@ function whichEnemy() {
     switch (enemyChoice) { //TODO change it more diffrent enemies
         case 1:
             enemyHp = 100;
-            enemy.style.backgroundColor = "green";
-            enemy.style.width = 15 + "vh";
-            enemy.style.height = 15 + "vh";
+            enemy.style.borderColor = "transparent transparent #33ff00 transparent";
             enemyInterval = 1000; // TODO balance the attack speed
             enemyDamage = 10
             break;
         case 2:
             enemyHp = 150;
-            enemy.style.backgroundColor = "blue";
-            enemy.style.width = 20 + "vh";
-            enemy.style.height = 20 + "vh";
+            enemy.style.borderColor = "transparent transparent #ffffff transparent";
             enemyInterval = 5000;
             enemyDamage = 10;
             break;
         case 3:
             enemyHp = 200;
-            enemy.style.backgroundColor = "darkred";
-            enemy.style.width = 25 + "vh";
-            enemy.style.height = 25 + "vh";
-            enemyInterval = 10000;
+            enemy.style.borderColor = "transparent transparent #940909 transparent";
+            enemyInterval = 1000;
             enemyDamage = 25;
             break;
     } // which enemy spawns
@@ -39,16 +33,16 @@ function whichEnemy() {
 
 function enemyTakesDamage() {
     switch (spellChoice) {
-        case 1: // Slash
+        case "Slash": // Slash
             enemyHp = enemyHp - 10; // change number for different damage
             break;
-        case 2: // Lightning
+        case "Lightning": // Lightning
             enemyHp = enemyHp - 20;
             break;
-        case 3: // Ice
+        case "Ice": // Ice
             enemyHp = enemyHp - 25;
             break;
-        case 4: // Ground
+        case "Ground": // Ground
             enemyHp = enemyHp - 40;
             break;
     }

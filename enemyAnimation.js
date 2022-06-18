@@ -1,6 +1,6 @@
 // animation for enemy movement
 let ident = null;
-let position = 5;
+let position = 20;
 let enemyInterval = 1000; // how often enemy attacks
 let enemyDps;
 
@@ -21,7 +21,7 @@ function enemyCasts() {
         enemyMovement.style.visibility = "visible";
         if (position >= 70) {
             console.log("TEST END")
-            position = 5;
+            position = 20
             clearInterval(ident);
             startOfAttacks();
             playerHealth(); // player damage
