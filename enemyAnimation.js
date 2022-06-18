@@ -30,7 +30,6 @@ function enemyCasts() {
             enemyMovement.style.top = position + 'vh';
             enemyMovement.style.left = position - 'vw';// % for left or right enemyMovement
             console.log("TEST " + position);
-
         }
     }
 }

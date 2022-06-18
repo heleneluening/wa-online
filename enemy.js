@@ -1,5 +1,6 @@
 let enemyHp;
 let enemyDamage;
+let enemyDeathCount = 0;
 
 function whichEnemy() {
 
@@ -64,6 +65,7 @@ function enemyHealthUpdate() {
 function enemyDeath() { // TODO add more things that should happen
     if (enemyHp <= 0) {
         enemyHp = 0; // set to 0 so it will enver show negative Hp
+        enemyDeathCount++; // +1 when enemy killed
         whichEnemy(); // new enemy
         clearInterval()
     }
