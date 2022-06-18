@@ -1,4 +1,56 @@
-//*** Initiation:
+let start = false;
+let tutorial = false;
+let quit = false;
+
+function gameStart() { // checks if start was clicked
+    start = true;
+    gameMenu();
+}
+
+function gameQuit() {
+    quit = true;
+    gameMenu();
+}
+
+function gameTutorial() {
+    tutorial = true;
+    gameMenu()
+}
+
+function gameMenu() { // gameMenu
+
+    let menuStart = document.getElementById("gameStart");
+    let menuTutorial = document.getElementById("gameTutorial");
+    let menuQuit = document.getElementById("gameQuit");
+    let menuGame = document.getElementById("gameMain");
+
+    if (start) { //game start
+        menuGame.style.visibility = "visible" // makes the game visible = game start
+        whichEnemy(); // whichEnemy spawn
+        startOfAttacks(); // start the attacks of the enemy
+        menuStart.remove(); // removes the div so they don't take space
+        menuTutorial.remove();
+        menuQuit.remove();
+    }
+
+    if (tutorial) { //tutroial
+        console.log("Tutorial")
+        menuStart.remove();
+        menuTutorial.remove();
+        menuQuit.remove();
+
+    }
+
+    if (quit) { //quit
+        window.close();
+    }
+}
+
+
+//*** Initiation Gamestyle:
+
+//Spell choice
+let spellChoice = 0;
 
 //Punkte importieren
 const points = document.getElementsByClassName("point");
@@ -26,9 +78,10 @@ class symbol {
     }
 }
 
-const symLineRight1 = new symbol("LineRight", [4, 5, 6]);
+const symLineRight1 = new symbol("LineRight", [1, 2, 3]);
+const symLineRight2 = new symbol("LineRight", [4, 5, 6]);
 const symLineRight3 = new symbol("LineRight", [7, 8, 9]);
-const symLineLeft1 = new symbol( "LineLeft", [3, 2, 1]);
+const symLineLeft1 = new symbol("LineLeft", [3, 2, 1]);
 const symLineLeft2 = new symbol("LineLeft", [6, 5, 4]);
 const symLineLeft3 = new symbol("LineLeft", [9, 8, 7]);
 const symLineDown1 = new symbol("LineDown", [1, 4, 7]);
@@ -44,6 +97,7 @@ const symEarth = new symbol("GroundAttack", [4, 7, 5, 9, 6]);
 // Leeres Inputsymbol definieren
 const symInput = new symbol("InputEmpty", []);
 
+console.log(symbolLib);
 
 //*** Methods
 /**
@@ -59,9 +113,6 @@ function pointSelect(element) {
     if (mouseIsDown) {
         element.classList.add("pointColour");
         symInput.pattern.push(element.id);
-        if (symInput.pattern.length >= 2) {
-            connectPoints();
-        }
     }
 }
 
@@ -126,42 +177,58 @@ function castMagic() {
             case "LineLeft":
                 //TODO spLineLeft();
                 console.log("spLineLeft()"); // TODO Debug
+                spellChoice = 0; //decides which spell css style is used (animation.js) and how much damage the enemy gets (enemy.js)
+                myMove(); // animation.js function for  animation of spells
+
+                enemyAttack() // enemy attack animation move somewhere else
+
                 break;
             case "LineRight":
                 // TODO spLineRight();
                 console.log("spLineRight()"); // TODO Debug
+                spellChoice = "Slash";
+                myMove();
                 break;
             case "LineUp":
                 // TODO spLineUp();
                 console.log("spLineRight()"); // TODO Debug
+                spellChoice = "Slash";
+                myMove();
                 break;
             case "LineDown":
                 // TODO spLineDown();
                 console.log("spLineDown()"); // TODO Debug
+                spellChoice = "Slash";
+                myMove();
                 break;
             case "LightningAttack":
                 // TODO spLightningAttack();
                 console.log("spLightningAttack()"); // TODO Debug
+                spellChoice = "Lightning";
+                myMove();
                 break;
             case "IceAttack":
                 // TODO spIceAttack();
                 console.log("spIceAttack()"); // TODO Debug
+                spellChoice = "Ice";
+                myMove();
                 break;
             case "GroundAttack":
                 // TODO spGroundAttack();
                 console.log("spGroundAttack()"); // TODO Debug
+                spellChoice = "Ground";
+                myMove();
                 break;
         }
-    }
-    else {
+    } else {
         console.log("Symbol not valid.");
     }
 }
 
 /**
  * compareSymbols: compares two symbols, return true/false
- * @param symbol1 ein Array mit 9 werten
- * @param symbol2 ein Array mit 9 werten
+ * @param symbol1 ein Array mit 9 Werten
+ * @param symbol2 ein Array mit 9 Werten
  */
 function compareSymbols(symbol1, symbol2) {
     let ausgabe = false;
@@ -178,90 +245,5 @@ function compareSymbols(symbol1, symbol2) {
     return ausgabe;
 }
 
-function connectPoints() {
-    // TODO test connects p4 and p2
-
-    let p1 = translateToPoint(symInput.pattern[(symInput.pattern.length - 2)]);
-    let p2 = translateToPoint(symInput.pattern[(symInput.pattern.length - 1)]);
-
-    let top, left, height, width;
-    let rotation = false;
-    let horizontal = false;
-
-    // Berechnung von top und height in vh
-    if (p1.y <= p2.y) {
-        top = (p1.y * 10 - 5); // ein Kasten ist 10vh groß, -5 um den Mittelpunkt zu fassen
-        height = ((p2.y - p1.y) * 10);
-    } else {
-        top = (p2.y * 10 - 5);
-        height = ((p1.y - p2.y) * 10);
-    }
-
-    // Berechnung von left und width in vh
-    if (p1.x <= p2.x) {
-        left = (p1.x * 10 - 5);
-        width = ((p2.x - p1.x) * 10);
-    } else {
-        left = (p2.x * 10 -5);
-        width = ((p2.x - p1.x) * 10);
-    }
-
-    // Bestimmung der rotation
-    if ((p1.x < p2.x && p1.y < p2.y) || (p1.x > p2.x && p1.y > p2.y)) {
-        rotation = true;
-    } else if (p1.x == p2.x && p1.y == p2.y) {
-        horizontal = true;
-    }
 
 
-
-
-}
-
-/**
- * translate to point: translates index of the point to coordinates
- * @param index des punktes
- * @returns {{x: number, y: number}} x und y Koordinate
- */
-function translateToPoint(index) {
-    let point = {x: 0, y: 0};
-
-    switch (index) {
-        case 1:
-            point.x = 1;
-            point.y = 1;
-            break;
-        case 2:
-            point.x = 2;
-            point.y = 1
-            break;
-        case 3:
-            point.x = 3;
-            point.y = 1;
-            break;
-        case 4:
-            point.x = 1;
-            point.y = 2;
-            break;
-        case 5:
-            point.x = 2;
-            point.y = 2;
-            break;
-        case 6:
-            point.x = 3;
-            point.y = 2;
-            break;
-        case 7:
-            point.x = 1;
-            point.y = 3;
-            break;
-        case 8:
-            point.x = 2;
-            point.y = 3;
-            break;
-        case 9:
-            point.x = 3;
-            point.y = 3;
-    }
-    return point;
-}
