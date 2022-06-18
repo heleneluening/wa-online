@@ -21,6 +21,7 @@ function gameMenu() { // gameMenu
 
     let menuStart = document.getElementById("gameStart");
     let menuTutorial = document.getElementById("gameTutorial");
+    let menuHighscore = document.getElementById("gameHighscore")
     let menuQuit = document.getElementById("gameQuit");
     let menuGame = document.getElementById("gameMain");
 
@@ -31,13 +32,15 @@ function gameMenu() { // gameMenu
         menuStart.remove(); // removes the div so they don't take space
         menuTutorial.remove();
         menuQuit.remove();
+        menuHighscore.remove();
     }
 
     if (tutorial) { //tutroial
         console.log("Tutorial")
-        menuStart.remove();
-        menuTutorial.remove();
-        menuQuit.remove();
+        menuStart.style.visibility = "hidden";
+        menuTutorial.style.visibility = "hidden";
+        menuQuit.style.visibility = "hidden";
+        menuHighscore.style.visibility = "hidden";
 
     }
 

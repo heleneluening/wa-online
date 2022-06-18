@@ -1,4 +1,5 @@
 let playerHp = 1000;
+let newHighscore
 
 function playerHealth() {
     playerHp = playerHp - enemyDamage;
@@ -20,26 +21,29 @@ function playerDeath() {
         clearInterval(enemyDps);
         console.log("you died");
         endingScreen.style.visibility = "hidden";
-        enemyMovement.style.visibility ="hidden";
+        enemyMovement.style.visibility = "hidden";
 
         highscoreSave();
+        //TODO Write a function that can restart the whole game, you will need to add the removed divs at start
 
-        enemyDeathCount;
     }
 }
 
-function highscoreSave() {
+function highscoreSave() { // saving the highscore
 
+    let oldHighscore = localStorage.getItem("highscore"); // calls the highscore
 
-    let oldHighscore = localStorage.getItem("highscore");
-
-    if (oldHighscore < enemyDeathCount) {
-        localStorage.setItem("highscore", enemyDeathCount);
-        console.log("new high");
+    if (oldHighscore < enemyDeathCount) { // if the new highscore is higher then the old
+        localStorage.setItem("highscore", enemyDeathCount); // sets a new highscore
+        highscoreUpdate();
     }
+} // saving highscore
+
+function highscoreUpdate(){
+    newHighscore = localStorage.getItem("highscore")
+    document.getElementById("gameHighscore").innerHTML = newHighscore;
+
 
 
 }
 
-/* TODO https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_localstorage
-    for highscore watch out dont make it buggy */

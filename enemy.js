@@ -40,16 +40,16 @@ function whichEnemy() {
 function enemyTakesDamage() {
     switch (spellChoice) {
         case 1: // Slash
-            enemyHp = enemyHp - 10; // change number for different damage
+            enemyHp = enemyHp - 25; // change number for different damage
             break;
         case 2: // Lightning
-            enemyHp = enemyHp - 20;
+            enemyHp = enemyHp - 50;
             break;
         case 3: // Ice
-            enemyHp = enemyHp - 25;
+            enemyHp = enemyHp - 60;
             break;
         case 4: // Ground
-            enemyHp = enemyHp - 40;
+            enemyHp = enemyHp - 75;
             break;
     }
 

@@ -115,7 +115,7 @@ main {
     z-index: 10;
 }
 
-#mainMenu { /* TODO make it responisve*/
+#mainMenu {
     position: center;
 }
 
@@ -141,3 +141,8 @@ h2 {
     top: 20vh;
 }
 
+h3 {
+    position: absolute;
+    font-size: 4vh;
+    top: 25vh;
+}
