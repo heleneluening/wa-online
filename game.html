@@ -12,7 +12,7 @@
 
 
 </head>
-<body onload="enemyHealthUpdate(); playerHealthUpdate()" > <!--TODO onload enemies hp move it somewhere else l8er-->
+<body onload="enemyHealthUpdate(); playerHealthUpdate();" > <!--TODO onload enemies hp move it somewhere else l8er-->
 
 
 <main onmouseup="mouseUp()" onmouseleave="mouseUp()">
@@ -35,13 +35,13 @@
         <div class="myEnemy"></div> <!-- enemy-->
 
         <h1> HP: <span id="eHp"></span></h1> <!-- enemy hp-->
-        <h2> HP: <span id="pHp"></span></h2> <!-- enemy hp-->
+        <h2>HP: <span id="pHp"></span></h2> <!-- enemy hp-->
 
         <div id="muster-container">
             <div class="grid-container" onMouseDown="mouseDown()" onmouseup="mouseUp()">
                 <!--creates the control field-->
                 <div class="grid-item">
-                    <div class="point" id="1" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+                    <div class="point" id="1" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)" ></div>
                 </div>
                 <div class="grid-item">
                     <div class="point" id="2" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>

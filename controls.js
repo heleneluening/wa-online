@@ -97,6 +97,8 @@ const symLightning = new symbol("LightningAttack", [2, 4, 5, 6, 8]);
 const symIce = new symbol("IceAttack", [5, 4, 8, 6, 2]);
 const symEarth = new symbol("GroundAttack", [4, 7, 5, 9, 6]);
 
+
+
 // Leeres Inputsymbol definieren
 const symInput = new symbol("InputEmpty", []);
 
@@ -247,6 +249,3 @@ function compareSymbols(symbol1, symbol2) {
     }
     return ausgabe;
 }
-
-
-

@@ -129,20 +129,24 @@ main {
 }
 
 
-h1 {
+h1 { /* enemy hp*/
     position: absolute;
-    font-size: 4vh;
-    top: 1vh;
+    font-size: 3vh;
+    top: 2vh;
 }
 
-h2 {
+h2 { /* player hp*/
     position: absolute;
-    font-size: 4vh;
-    top: 20vh;
+    font-size: 3vh;
+    top: 88vh;
 }
 
 h3 {
     position: absolute;
-    font-size: 4vh;
+    font-size: 3vh;
     top: 25vh;
+}
+
+#levelDesign {
+    background: white;
 }
