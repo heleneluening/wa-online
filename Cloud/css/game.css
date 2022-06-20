@@ -2,15 +2,17 @@
 main {
   background-image: url(portal_3.2.png);
   background-repeat: no-repeat;
-  height:100%;
+  height: 100%;
 }
+
 html, body {
-    height: 100vh;
-    width: 100vw;
-    margin: 0;
-    padding: 0;
-    background-color: black;
-    color: white;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  color: white;
+  overflow: hidden;
 }
 
 
@@ -18,90 +20,89 @@ html, body {
 work
  */
 @media (min-aspect-ratio: 9/16) {
-    /* Legt das Seitenverhältnis an einer gewissen Breite fest */
-    main {
-        width: 56vh;
-        margin: auto;
-        text-align: center;
-    }
+  /* Legt das Seitenverhältnis an einer gewissen Breite fest */
+  main {
+    width: 56vh;
+    margin: auto;
+    text-align: center;
+  }
 }
 
 /* Muster Box */
 .grid-container {
-    position: fixed;
-    top: 100%;
-    left: 50%;
-    margin-top: -15vh; /* halbe Breite/Höhe */
-    width: 30vh;
-    height: 30vh;
-    display: grid;
-    grid-template-columns: auto auto auto;
-    background-color: grey;
-    transform: translate(-50%, -50%);
-    z-index: 4;
+  position: fixed;
+  top: 100%;
+  left: 50%;
+  margin-top: -15vh; /* halbe Breite/Höhe */
+  width: 30vh;
+  height: 30vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  background-color: grey;
+  transform: translate(-50%, -50%);
+  z-index: 4;
 }
 
 /* Ende Responsive Design */
 
 
 .grid-container > div {
-    position: relative;
-    text-align: center;
-    padding: 1em 0;
-    font-size: 1em;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+  position: relative;
+  text-align: center;
+  padding: 1em 0;
+  font-size: 1em;
+  -webkit-user-drag: none;
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
 
 }
 
 .point {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 50%;
-    background-color: aqua;
-    height: 30%;
-    width: 30%;
-    margin: -15% 0 0 -15%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-color: aqua;
+  height: 30%;
+  width: 30%;
+  margin: -15% 0 0 -15%;
 }
 
 .pointColour {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    border-radius: 50%;
-    background-color: red;
-    height: 30%;
-    width: 30%;
-    margin: -15% 0 0 -15%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  background-color: red;
+  height: 30%;
+  width: 30%;
+  margin: -15% 0 0 -15%;
 }
 
 
-.myAnimation {
-    width: 5vh;
-    height: 5vh;
-    margin: auto;
-    position: sticky;
-    border-radius: 50%;
-    background-color: blue;
-    visibility: hidden;
+.spellAnimation {
+  width: 5vh;
+  height: 5vh;
+  margin: auto;
+  position: sticky;
+  border-radius: 50%;
+  background-color: blue;
+  visibility: hidden;
 }
 
 
-#enemyMovement {
-    padding-top: 0vh;
-    width: 5vh;
-    height: 5vh;
-    margin: auto;
-    position: relative;
-    border-radius: 0;
-    visibility: hidden;
-    z-index: 4;
-    content: url(bubble.png); /* add picture and url of the picture in project*/
-
+#enemyAttack {
+  padding-top: 0vh;
+  width: 5vh;
+  height: 5vh;
+  margin: auto;
+  position: relative;
+  border-radius: 50%;
+  visibility: hidden;
+  background-color: red;
+  z-index: 4;
 }
 
 
@@ -117,7 +118,8 @@ work
   border-color: transparent transparent #ff0000 transparent;
 
 }
-.boeseAugen1{
+
+.boeseAugen1 {
   position: relative;
   width: 0px;
   height: 0px;
@@ -130,7 +132,8 @@ work
   z-index: 10;
   border-color: transparent transparent #200022 transparent;
 }
-.boeseAugen2{
+
+.boeseAugen2 {
   position: relative;
   width: 0px;
   height: 0px;
@@ -145,30 +148,30 @@ work
 }
 
 #mainMenu { /* TODO make it responisve*/
-    position: center;
-    font-size: 10vh;
+  position: center;
+  font-size: 10vh;
 }
 
 #gameStart {
-    top: 30vh;
-    margin-top: 10vh;
+  top: 30vh;
+  margin-top: 10vh;
 }
 
 
 #gameMain {
-    visibility: hidden;
+  visibility: hidden;
 }
 
 
 h1 {
-    position: absolute;
-    font-size: 4vh;
-    top: 1vh;
+  position: absolute;
+  font-size: 4vh;
+  top: 1vh;
 }
 
 h2 {
-    position: absolute;
-    font-size: 4vh;
-    top: 20vh;
+  position: absolute;
+  font-size: 4vh;
+  top: 20vh;
 }
 

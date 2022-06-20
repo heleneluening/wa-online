@@ -1,16 +1,14 @@
 <!DOCTYPE html> <!--Game HTML-->
-<html lang="en">
+<html lang="de">
 <head>
-    <meta charsets="UTF-8">
+    <meta charset="UTF-8">
     <title>Muster Test</title>
-    <link rel="stylesheet" type="text/css" href="css/game.css" media="screen"/>
-    <script type="text/javascript" src="js/controls.js"></script> <!-- Main Game controls-->
-    <script type="text/javascript" src="js/animation.js"></script> <!-- Spell animation-->
-    <script type="text/javascript" src="js/enemy.js"></script> <!-- Enemy main-->
-    <script type="text/javascript" src="js/player.js"></script> <!-- player main-->
-    <script type="text/javascript" src="js/enemyAnimation.js"></script><!-- Enemy animation-->
-
-
+    <link rel="stylesheet" href="css/game.css" media="screen"/>
+    <script src="js/controls.js"></script> <!-- Main Game controls-->
+    <script src="js/animation.js"></script> <!-- Spell animation-->
+    <script src="js/enemy.js"></script> <!-- Enemy main-->
+    <script src="js/player.js"></script> <!-- player main-->
+    <script src="js/enemyAnimation.js"></script><!-- Enemy animation-->
 </head>
 <body onload="enemyHealthUpdate(); playerHealthUpdate()" > <!--TODO onload enemies hp move it somewhere else l8er-->
 
@@ -26,7 +24,7 @@
     <div id="gameMain"> <!-- div for whole game-->
 
         <div id="myAnimation"></div> <!-- player spell animation-->
-        <div id="enemyMovement"></div> <!-- enemy spells-->
+        <div id="enemyAttack"></div> <!-- enemy spells-->
         <div class="myEnemy"><div class="boeseAugen1"></div><div class="boeseAugen2"></div></div> <!-- enemy-->
 
 

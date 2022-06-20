@@ -12,7 +12,7 @@ function playerHealthUpdate() {
 
 function playerDeath() {
     let endingScreen = document.getElementById("gameMain"); // for hidding game again after dedath
-    let enemyMovement = document.getElementById("enemyMovement");
+    let enemyMovement = document.getElementById("enemyAttack");
 
     if (playerHp <= 0) {
         playerHp = 0; // so it doesnt your life cant fall under 0
@@ -24,7 +24,7 @@ function playerDeath() {
 
         highscoreSave();
 
-        enemyDeathCount;
+        level;
     }
 }
 
@@ -33,8 +33,8 @@ function highscoreSave() {
 
     let oldHighscore = localStorage.getItem("highscore");
 
-    if (oldHighscore < enemyDeathCount) {
-        localStorage.setItem("highscore", enemyDeathCount);
+    if (oldHighscore < level) {
+        localStorage.setItem("highscore", level);
         console.log("new high");
     }
 

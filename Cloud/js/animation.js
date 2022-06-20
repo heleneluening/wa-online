@@ -4,35 +4,35 @@ let id = null;
 let spellCount = []; // counts how often a symbol was drawn right
 let elem;
 
-function myMove() { //movement and style changing of #myAnimation
+function spellAnimation() { //movement and style changing of #myAnimation
 
     elem = document.createElement("div");
-    elem.className = "myAnimation";
+    elem.className = "spellAnimation";
     let mainelem = document.getElementsByTagName("main");
     mainelem.item(0).appendChild(elem);
 
     switch (spellChoice) { // each case changes the style of the spell
         case "Slash":
-            console.log("TEST 1")
+            console.log("Slash")
             elem.style.backgroundColor = "blue"; // changes colour from spell
             elem.style.borderRadius = "0%"; // changes form of spell
             break;
         case "Lightning":
-            console.log("TEST 2")
-            elem.style.backgroundColor = "yellow";
+            console.log("Lightning")
+            elem.style.backgroundColor = "aqua";
             elem.style.borderRadius = "100%";
             elem.style.width = "30%";
             elem.style.height = "400%";
             break;
         case "Ice":
-            console.log("TEST 3")
+            console.log("Ice")
             elem.style.backgroundColor = "white";
             elem.style.borderRadius = "100%";
             elem.style.width = "30%";
             elem.style.height = "15%";
             break;
       case "Ground":
-        console.log("TEST 4")
+        console.log("Ground")
         elem.style.backgroundColor ="#664008";
         elem.style.borderRadius = "20%"
         elem.style.height ="30%";
@@ -44,8 +44,6 @@ function myMove() { //movement and style changing of #myAnimation
     spellCount.push(elem);
     clearInterval(id); // stops the interval if missing the spell gets faster for each spell cast
     id = setInterval(frame, 10);// 10 - 20
-
-
 }
 
 function frame() {
