@@ -1,7 +1,10 @@
 let enemyHp;
 let enemyDamage;
 let level = 0;
-const vh = (document.body.clientHeight / 100);
+let vh = 42
+window.addEventListener("load", () => {
+  vh = (document.body.clientHeight / 100);
+})
 let enemyLib = [];
 
 /*
@@ -17,7 +20,7 @@ class enemy {
 
  */
 
-let enemiesJson = toString([{"hp": 100, "damage": 10, "color": "green", "interval": 10000},
+/* let enemiesJson = toString([{"hp": 100, "damage": 10, "color": "green", "interval": 10000}, //TODO IS not needed
   {"hp": 150, "damage": 10, "color": "white", "interval": 10000},
   {"hp": 200, "damage": 15, "color": "pink", "interval": 5000},
   {"hp": 200, "damage": 20, "color": "purple", "interval": 5000},
@@ -26,25 +29,25 @@ let enemiesJson = toString([{"hp": 100, "damage": 10, "color": "green", "interva
   {"hp": 300, "damage": 30, "color": "orange", "interval": 5000},
   {"hp": 350, "damage": 30, "color": "red", "interval": 5000}]);
 
-console.log(enemiesJson);
+console.log(enemiesJson); */
 
-try {
-  enemyLib = JSON.parse(fetch("js/enemies.json"));
+fetch("js/enemies.json").then(data => data.json()).then(data => {
+  enemyLib = data;
   console.log("yay fetch")
-} catch (e) {
+}).catch(it => {
   console.log(e);
   enemyLib = JSON.parse(enemiesJson);
-}
+})
 
 function whichEnemy(level) {
 
-  if (level <= enemyLib.length) {
-    let enemy = document.querySelector(".myEnemy"); //TODO change the things that should happen
+  if (level < enemyLib.length) {
+    let enemy = document.querySelector(".myEnemy"); //
 
-    enemy.enemyHP = enemyLib[level].enemyHP;
-    enemy.enemyDamage = enemyLib[level].enemyDamage;
-    enemy.style.borderColor = enemyLib[level].enemyColor;
-    enemy.enemyInterval = enemyLib[level].enemyInterval;
+    enemyHp = enemyLib[level].hp;
+    enemyDamage = enemyLib[level].damage;
+    enemy.style.borderColor = enemyLib[level].color;
+    enemyInterval = enemyLib[level].interval;
 
     enemyHealthUpdate();
   } else {

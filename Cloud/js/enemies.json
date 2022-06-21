@@ -2,49 +2,49 @@
   {
     "hp": 100,
     "damage": 10,
-    "color": "green",
+    "color": "transparent transparent green transparent",
     "interval": 10000
   },
   {
     "hp": 150,
     "damage": 10,
-    "color": "white",
+    "color": "transparent transparent whitesmoke transparent",
     "interval": 10000
   },
   {
     "hp": 200,
     "damage": 15,
-    "color": "pink",
+    "color": "transparent transparent pink transparent",
     "interval": 5000
   },
   {
     "hp": 200,
     "damage": 20,
-    "color": "purple",
+    "color": "transparent transparent purple transparent",
     "interval": 5000
   },
   {
     "hp": 250,
     "damage": 20,
-    "color": "yellow",
+    "color": "transparent transparent yellow transparent",
     "interval": 10000
   },
   {
     "hp": 250,
     "damage": 25,
-    "color": "blue",
+    "color": "transparent transparent blue transparent",
     "interval": 10000
   },
   {
     "hp": 300,
     "damage": 30,
-    "color": "orange",
+    "color": "transparent transparent orange transparent",
     "interval": 5000
   },
   {
     "hp": 350,
     "damage": 30,
-    "color": "red",
+    "color": "transparent transparent red transparent",
     "interval": 5000
   }
 ]

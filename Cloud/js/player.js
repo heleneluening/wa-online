@@ -22,24 +22,10 @@ function playerDeath() {
         endingScreen.style.visibility = "hidden";
         enemyMovement.style.visibility ="hidden";
 
-        highscoreSave();
 
         level;
     }
 }
 
-function highscoreSave() {
 
 
-    let oldHighscore = localStorage.getItem("highscore");
-
-    if (oldHighscore < level) {
-        localStorage.setItem("highscore", level);
-        console.log("new high");
-    }
-
-
-}
-
-/* TODO https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_win_localstorage
-    for highscore watch out dont make it buggy */

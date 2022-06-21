@@ -1,7 +1,6 @@
 /* Responsive Design  */
 main {
-  background-image: url(portal_3.2.png);
-  background-repeat: no-repeat;
+  background-color: darkgray;
   height: 100%;
 }
 
@@ -40,7 +39,7 @@ work
   grid-template-columns: auto auto auto;
   background-color: grey;
   transform: translate(-50%, -50%);
-  z-index: 4;
+  z-index: 10;
 }
 
 /* Ende Responsive Design */
@@ -90,7 +89,7 @@ work
   border-radius: 50%;
   background-color: blue;
   visibility: hidden;
-  z-index: 12;
+  z-index: 3;
 }
 
 
@@ -103,7 +102,7 @@ work
   border-radius: 50%;
   visibility: hidden;
   background-color: red;
-  z-index: 4;
+  z-index: 2;
 }
 
 
@@ -114,7 +113,7 @@ work
   width: 0px;
   height: 0px;
   border-style: solid;
-  z-index: 8;
+  z-index: 3;
   border-width: 0vh 10vh 20vh 10vh;
   border-color: transparent transparent #ff0000 transparent;
 
@@ -153,9 +152,18 @@ work
   font-size: 10vh;
 }
 
-#gameStart {
+#gameStart { /* this 3 are */
   top: 30vh;
-  margin-top: 10vh;
+  color: red;
+}
+#gameTutorial {
+  top: 30vh;
+  color: red;
+}
+
+#gameQuit {
+  top: 30vh;
+  color: red;
 }
 
 
@@ -168,11 +176,13 @@ h1 {
   position: absolute;
   font-size: 4vh;
   top: 1vh;
+  color: red;
 }
 
 h2 {
   position: absolute;
   font-size: 4vh;
   top: 20vh;
+  color: yellowgreen;
 }
 
