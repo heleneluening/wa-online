@@ -10,14 +10,19 @@
     <script src="js/player.js"></script> <!-- player main-->
     <script src="js/enemyAnimation.js"></script><!-- Enemy animation-->
 </head>
-<body onload="enemyHealthUpdate(); playerHealthUpdate()" > <!--TODO onload enemies hp move it somewhere else l8er-->
+<body onload="enemyHealthUpdate(); playerHealthUpdate();" > <!--TODO onload enemies hp move it somewhere else l8er-->
+
 
 <main onmouseup="mouseUp()" onmouseleave="mouseUp()">
 <div>
     <div id="mainMenu">
         <div id="gameStart" onclick="gameStart()">Start</div> <!-- main menu-->
         <div id="gameTutorial" onclick="gameTutorial()">Tutorial</div>
+
+        <div id="gameHighscore" onclick="highscoreUpdate()">Highscore</div>
+        <!--shows the highscore if clicked but also movesthing-->
         <div id="gameQuit" onclick="gameQuit()">Exit</div>
+
     </div>
 
 
@@ -29,15 +34,13 @@
 
 
         <h1> HP: <span id="eHp"></span></h1> <!-- enemy hp-->
-        <h2> HP: <span id="pHp"></span></h2> <!-- enemy hp-->
-
-
+        <h2>HP: <span id="pHp"></span></h2> <!-- enemy hp-->
 
         <div id="muster-container">
             <div class="grid-container" onMouseDown="mouseDown()" onmouseup="mouseUp()">
                 <!--creates the control field-->
                 <div class="grid-item">
-                    <div class="point" id="1" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>
+                    <div class="point" id="1" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)" ></div>
                 </div>
                 <div class="grid-item">
                     <div class="point" id="2" onmouseover="pointSelect(this)" onmousedown="pointClicked(this)"></div>

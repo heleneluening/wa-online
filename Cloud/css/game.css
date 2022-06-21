@@ -90,6 +90,7 @@ work
   border-radius: 50%;
   background-color: blue;
   visibility: hidden;
+  z-index: 12;
 }
 
 

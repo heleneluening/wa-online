@@ -26,11 +26,12 @@ function gameMenu() { // gameMenu
 
   if (start) { //game start
     gameMain.style.visibility = "visible"; // makes the game visible = game start
-    whichEnemy(0); // whichEnemy spawn
     startOfAttacks(); // start the attacks of the enemy
     menuStart.remove(); // removes the div so they don't take space
     menuTutorial.remove();
     menuQuit.remove();
+    whichEnemy(0); // whichEnemy spawn
+
   }
 
   if (tutorial) { //tutroial

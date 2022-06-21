@@ -16,6 +16,7 @@ function spellAnimation() { //movement and style changing of #myAnimation
             console.log("Slash")
             elem.style.backgroundColor = "blue"; // changes colour from spell
             elem.style.borderRadius = "0%"; // changes form of spell
+            elem.style.zIndex = 12;
             break;
         case "Lightning":
             console.log("Lightning")

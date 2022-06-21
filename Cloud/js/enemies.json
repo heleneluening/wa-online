@@ -1,8 +1,8 @@
-[
+
   {
     "hp": 100,
     "damage": 10,
     "color": "green",
     "interval": 10000
   }
-]
+
