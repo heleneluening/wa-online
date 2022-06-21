@@ -1,8 +1,50 @@
-
+[
   {
     "hp": 100,
     "damage": 10,
     "color": "green",
     "interval": 10000
+  },
+  {
+    "hp": 150,
+    "damage": 10,
+    "color": "white",
+    "interval": 10000
+  },
+  {
+    "hp": 200,
+    "damage": 15,
+    "color": "pink",
+    "interval": 5000
+  },
+  {
+    "hp": 200,
+    "damage": 20,
+    "color": "purple",
+    "interval": 5000
+  },
+  {
+    "hp": 250,
+    "damage": 20,
+    "color": "yellow",
+    "interval": 10000
+  },
+  {
+    "hp": 250,
+    "damage": 25,
+    "color": "blue",
+    "interval": 10000
+  },
+  {
+    "hp": 300,
+    "damage": 30,
+    "color": "orange",
+    "interval": 5000
+  },
+  {
+    "hp": 350,
+    "damage": 30,
+    "color": "red",
+    "interval": 5000
   }
-
+]
