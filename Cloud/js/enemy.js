@@ -2,10 +2,9 @@ let enemyHp;
 let enemyDamage;
 let level = 0;
 const vh = (document.body.clientHeight / 100);
+let enemyLib = [];
 
-
-const enemyLib = []
-
+/*
 class enemy {
   constructor(enemyHP, enemyDamage, enemyColor, enemyInterval) {
     this.enemyHP = enemyHP;
@@ -16,15 +15,30 @@ class enemy {
   }
 }
 
-fetch("js/enemies.json").then(res => res.json()).then(enemyData => {
-  for (const enemyItem of enemyData) {
-    new enemy(enemyItem.hp, enemyItem.damage, enemyItem.color, enemyItem.interval)
-  }
-})
+ */
+
+let enemiesJson = toString([{"hp": 100, "damage": 10, "color": "green", "interval": 10000},
+  {"hp": 150, "damage": 10, "color": "white", "interval": 10000},
+  {"hp": 200, "damage": 15, "color": "pink", "interval": 5000},
+  {"hp": 200, "damage": 20, "color": "purple", "interval": 5000},
+  {"hp": 250, "damage": 20, "color": "yellow", "interval": 10000},
+  {"hp": 250, "damage": 25, "color": "blue", "interval": 10000},
+  {"hp": 300, "damage": 30, "color": "orange", "interval": 5000},
+  {"hp": 350, "damage": 30, "color": "red", "interval": 5000}]);
+
+console.log(enemiesJson);
+
+try {
+  enemyLib = JSON.parse(fetch("js/enemies.json"));
+  console.log("yay fetch")
+} catch (e) {
+  console.log(e);
+  enemyLib = JSON.parse(enemiesJson);
+}
 
 function whichEnemy(level) {
 
-  if (level<=enemyLib.length) {
+  if (level <= enemyLib.length) {
     let enemy = document.querySelector(".myEnemy"); //TODO change the things that should happen
 
     enemy.enemyHP = enemyLib[level].enemyHP;
@@ -34,7 +48,7 @@ function whichEnemy(level) {
 
     enemyHealthUpdate();
   } else {
-    for(let i = Math.round(Math.random() * 12); i > 0; i--)
+    for (let i = Math.round(Math.random() * 12); i > 0; i--)
       alert("Das Spiel ist vorbei!!! Noch " + i + " mal klicken zum Weiterspielen")
     enemyHp = 0;
     level = 0;
@@ -82,3 +96,7 @@ function enemyAttack() {
   console.log("TEST ATTACK");
   enemyCasts();
 }
+
+
+
+
