@@ -3,7 +3,11 @@ main {
     background-color: darkgray;
     height: 100%;
     z-index: -2;
-    position: fixed;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
 }
 
 html, body {
@@ -14,11 +18,7 @@ html, body {
     background-color: black;
     color: white;
     overflow: hidden;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+
 }
 
 
