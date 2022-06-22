@@ -2,6 +2,7 @@
 main {
   background-color: darkgray;
   height: 100%;
+  z-index:-2;
 }
 
 html, body {
@@ -39,7 +40,7 @@ work
   grid-template-columns: auto auto auto;
   background-color: grey;
   transform: translate(-50%, -50%);
-  z-index: 10;
+  z-index: 5;
 }
 
 /* Ende Responsive Design */
@@ -89,7 +90,7 @@ work
   border-radius: 50%;
   background-color: blue;
   visibility: hidden;
-  z-index: 3;
+  z-index: 2;
 }
 
 
@@ -113,9 +114,11 @@ work
   width: 0px;
   height: 0px;
   border-style: solid;
-  z-index: 3;
   border-width: 0vh 10vh 20vh 10vh;
   border-color: transparent transparent #ff0000 transparent;
+  z-index: 3;
+  visibility: visible;
+
 
 }
 
@@ -154,16 +157,16 @@ work
 
 #gameStart { /* this 3 are */
   top: 30vh;
-  color: red;
+  color: darkred;
 }
 #gameTutorial {
   top: 30vh;
-  color: red;
+  color: darkred;
 }
 
 #gameQuit {
   top: 30vh;
-  color: red;
+  color: darkred;
 }
 
 
@@ -176,13 +179,14 @@ h1 {
   position: absolute;
   font-size: 4vh;
   top: 1vh;
-  color: red;
+  color: darkred;
+
 }
 
 h2 {
   position: absolute;
   font-size: 4vh;
   top: 20vh;
-  color: yellowgreen;
+  color: darkgreen;
 }
 

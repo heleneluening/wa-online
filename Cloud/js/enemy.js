@@ -1,6 +1,6 @@
-let enemyHp;
-let enemyDamage;
-let level = 0;
+let enemyHp; // life of enemy
+let enemyDamage; // damage of enemy
+let level = 0; // level stage
 let vh = 42
 window.addEventListener("load", () => {
   vh = (document.body.clientHeight / 100);
@@ -50,7 +50,7 @@ function whichEnemy(level) {
     enemyInterval = enemyLib[level].interval;
 
     enemyHealthUpdate();
-  } else {
+  } else { // TODO is this needed?
     for (let i = Math.round(Math.random() * 12); i > 0; i--)
       alert("Das Spiel ist vorbei!!! Noch " + i + " mal klicken zum Weiterspielen")
     enemyHp = 0;
@@ -61,7 +61,7 @@ function whichEnemy(level) {
 
 }
 
-function enemyTakesDamage() {
+function enemyTakesDamage() { //TODO program resistences and change the damage
   switch (spellChoice) {
     case "Slash":
       enemyHp = enemyHp - 10;
@@ -88,10 +88,10 @@ function enemyHealthUpdate() {
 
 function enemyDeath() { // TODO add more things that should happen
   if (enemyHp <= 0) {
-    enemyHp = 0; // set to 0 so it will enver show negative Hp
+    enemyHp = 0; // set to 0 so it will never show negative Hp
     level++; // +1 when enemy killed
     whichEnemy(level); // new enemy
-    clearInterval()
+    clearInterval() // TODO find out why we clear the Interval here
   }
 }
 

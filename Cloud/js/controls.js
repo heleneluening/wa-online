@@ -30,7 +30,7 @@ function gameMenu() { // gameMenu
     menuStart.remove(); // removes the div so they don't take space
     menuTutorial.remove();
     menuQuit.remove();
-    whichEnemy(0); // whichEnemy spawn
+    whichEnemy(0); // enemy spawn
 
   }
 
@@ -98,7 +98,7 @@ function pointSelect(element) {
     element.classList.add("pointColour");
     const row = Math.floor((element.id - 1) / 3)
     const col = (element.id - 1) % 3
-    if(row == oldrow && Math.abs(col - oldcol) == 2) {
+    if(row === oldrow && Math.abs(col - oldcol) === 2) {
       const intid = row * 3 + Math.min(col, oldcol) + 2
       document.getElementById(intid).classList.add("pointColour");
       symInput.pattern.push(intid)
