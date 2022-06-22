@@ -5,6 +5,7 @@ function touchHasStarted(event) {
     console.log("Touch has started");
     mouseDown();
 }
+
 function touchHasMoved(event) {
     pointSelect(document.elementFromPoint(event.touches[0].clientX, event.touches[0].clientY));
     console.log("Touch has Moved");
@@ -56,7 +57,7 @@ fetch("js/symbols.json").then(res => res.json()).then(symbolData => {
 let oldcol = -42, oldrow = -42
 
 function pointSelect(element) {
-    if (mouseIsDown) {
+    if (mouseIsDown && isMusterPoint(element)) {
         element.classList.add("pointColour");
         const row = Math.floor((element.id - 1) / 3)
         const col = (element.id - 1) % 3
@@ -71,6 +72,22 @@ function pointSelect(element) {
     }
 }
 
+function isMusterPoint(element) {
+    switch (element.id) {
+        case "1":
+        case "2":
+        case "3":
+        case "4":
+        case "5":
+        case "6":
+        case "7":
+        case "8":
+        case "9":
+            return true;
+        default:
+            return false;
+    }
+}
 
 function mouseDown() { // IDE says unused, but it is needed for pointSelect to function!
     mouseIsDown = true;
