@@ -37,7 +37,7 @@ class symbol {
     }
 }
 
-let symInput = null
+const symInput = new Set();
 fetch("js/symbols.json").then(res => res.json()).then(symbolData => {
     for (const key in symbolData) {
         for (const combination of symbolData[key]) {
@@ -45,8 +45,7 @@ fetch("js/symbols.json").then(res => res.json()).then(symbolData => {
         }
     }
 
-// Leeres Inputsymbol definieren
-    symInput = new symbol("InputEmpty", []);
+
 
     console.log(symbolLib);
 })
@@ -64,9 +63,9 @@ function pointSelect(element) {
         if (row === oldrow && Math.abs(col - oldcol) === 2) {
             const intid = row * 3 + Math.min(col, oldcol) + 2
             document.getElementById(intid).classList.add("pointColour");
-            symInput.pattern.push(intid)
+            symInput.add(intid)
         }
-        symInput.pattern.push(element.id);
+        symInput.add(element.id);
         oldrow = row
         oldcol = col
     }
@@ -101,7 +100,7 @@ function mouseUp() { // mouseIsDown becomes false and it removes the added colou
         for (const p of points) {
             p.classList.remove("pointColour"); // removes the colour
         }
-        symInput.pattern.length = 0;//delete array
+        symInput.clear();//delete array
         oldcol = -42
         oldrow = -42
     }
@@ -121,7 +120,7 @@ function castMagic() {
     let foundSymbol;
 
     for (let j = 0; j < symbolLib.length; j++) { // TODO 4 ist Platzhalter für die Anzahl Symbole
-        if (compareSymbols(symbolLib[j].pattern, symInput.pattern)) {
+        if (compareSymbols(symbolLib[j].pattern, Array.from(symInput))) {
             symbolFound = true;
             foundSymbol = symbolLib[j];
             break;
