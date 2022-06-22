@@ -26,9 +26,9 @@ fetch("js/enemies.json").then(data => data.json()).then(data => {
     enemyLib = data;
     console.log("yay fetch")
 }).catch(it => {
-  console.log(e);
-  // In case fetch fails
-  // enemyLib = JSON.parse(enemiesJson);
+    console.log(e);
+    // In case fetch fails
+    // enemyLib = JSON.parse(enemiesJson);
 })
 
 function whichEnemy(level) {
@@ -36,38 +36,38 @@ function whichEnemy(level) {
     if (level < enemyLib.length) {
         let enemy = document.querySelector(".myEnemy"); //
 
-    enemyHp = enemyLib[level].hp;
-    enemyDamage = enemyLib[level].damage;
-    enemy.style.borderColor = "transparent transparent " + enemyLib[level].color + " transparent";
-    enemyType = enemyLib[level].type;
-    enemyInterval = enemyLib[level].interval;
+        enemyHp = enemyLib[level].hp;
+        enemyDamage = enemyLib[level].damage;
+        enemy.style.borderColor = "transparent transparent " + enemyLib[level].color + " transparent";
+        enemyType = enemyLib[level].type;
+        enemyInterval = enemyLib[level].interval;
 
-    enemyHealthUpdate();
-  } else { // TODO is this needed?
-    alert("Herzlichen Glückwunsch!")
-    enemyHp = 0;
-    level = 0;
-    whichEnemy();
-    clearInterval()
-  }
+        enemyHealthUpdate();
+    } else { // TODO is this needed?
+        alert("Herzlichen Glückwunsch!")
+        enemyHp = 0;
+        level = 0;
+        whichEnemy();
+        clearInterval()
+    }
 
 }
 
 function enemyTakesDamage() {
-  switch (spellChoice) {
-    case "Slash":
-      enemyHp = enemyHp - 10;
-      break;
-    case "Lightning":
-      enemyHp = enemyHp - lightningSpellDamage();
-      break;
-    case "Ice":
-      enemyHp = enemyHp - iceSpellDamage();
-      break;
-    case "Ground":
-      enemyHp = enemyHp - groundSpellDamage();
-      break;
-  }
+    switch (spellChoice) {
+        case "Slash":
+            enemyHp = enemyHp - 10;
+            break;
+        case "Lightning":
+            enemyHp = enemyHp - lightningSpellDamage();
+            break;
+        case "Ice":
+            enemyHp = enemyHp - iceSpellDamage();
+            break;
+        case "Ground":
+            enemyHp = enemyHp - groundSpellDamage();
+            break;
+    }
 
     enemyDeath();
     enemyHealthUpdate();
@@ -75,34 +75,36 @@ function enemyTakesDamage() {
 }
 
 function lightningSpellDamage() {
-  switch (enemyType) {
-    case "Lightning":
-      return 10;
-    case "Ice":
-      return 40;
-    case "Ground":
-      return 10;
-  }
+    switch (enemyType) {
+        case "Lightning":
+            return 10;
+        case "Ice":
+            return 40;
+        case "Ground":
+            return 10;
+    }
 }
+
 function groundSpellDamage() {
-  switch (enemyType) {
-    case "Lightning":
-      return 40;
-    case "Ice":
-      return 10;
-    case "Ground":
-      return 10;
-  }
+    switch (enemyType) {
+        case "Lightning":
+            return 40;
+        case "Ice":
+            return 10;
+        case "Ground":
+            return 10;
+    }
 }
+
 function iceSpellDamage() {
-  switch (enemyType) {
-    case "Lightning":
-      return 10;
-    case "Ice":
-      return 10;
-    case "Ground":
-      return 40;
-  }
+    switch (enemyType) {
+        case "Lightning":
+            return 10;
+        case "Ice":
+            return 10;
+        case "Ground":
+            return 40;
+    }
 }
 
 function enemyHealthUpdate() {
@@ -122,6 +124,8 @@ function enemyAttack() {
     console.log("TEST ATTACK");
     enemyCasts();
 }
+
+
 
 
 

@@ -7,28 +7,30 @@ let enemyInterval = 1000; // how often enemy attacks
 let enemyDps; // global interval variable
 
 function startOfAttacks() {
-  enemyDps = setInterval(enemyCasts, enemyInterval)
+    enemyDps = setInterval(enemyCasts, enemyInterval)
 }
 
 
 function enemyCasts() {
 
-  let enemyMovement = document.getElementById("enemyAttack");
-  clearInterval(enemyDps);
-  ident = setInterval(movement, 10);
+    let enemyMovement = document.getElementById("enemyAttack");
+    clearInterval(enemyDps);
+    ident = setInterval(movement, 10);
 
-  function movement() {
+    function movement() {
 
-    enemyMovement.style.visibility = "visible";
-    if (position >= 70) {
-      position = 20
-      clearInterval(ident);
-      startOfAttacks(); // restarts the attack again after it reaches it goal, needed or bug
-      playerHealth(); // player damage
-    } else {
-      position++; // +1 postion => moves the div for 1vh
-      enemyMovement.style.top = position + 'vh';
+        enemyMovement.style.visibility = "visible";
+        if (position >= 70) {
+            position = 20
+            clearInterval(ident);
+            startOfAttacks(); // restarts the attack again after it reaches it goal, needed or bug
+            playerHealth(); // player damage
+        } else {
+            position++; // +1 postion => moves the div for 1vh
+            enemyMovement.style.top = position + 'vh';
 
+        }
     }
-  }
 }
+
+

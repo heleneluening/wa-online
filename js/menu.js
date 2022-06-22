@@ -62,3 +62,5 @@ function gameMenu() { // gameMenu
         window.close();
     }
 }
+
+
