@@ -21,35 +21,35 @@
     "type": "Lightning"
   },
   {
-    "hp": 160,
+    "hp": 120,
     "damage": 20,
     "color": "#664008",
     "interval": 5000,
     "type": "Ground"
   },
   {
-    "hp": 160,
+    "hp": 120,
     "damage": 20,
     "color": "white",
     "interval": 10000,
     "type": "Ice"
   },
   {
-    "hp": 160,
+    "hp": 120,
     "damage": 25,
     "color": "aqua",
     "interval": 10000,
     "type": "Lightning"
   },
   {
-    "hp": 300,
+    "hp": 160,
     "damage": 30,
     "color": "#664008",
     "interval": 5000,
     "type": "Ground"
   },
   {
-    "hp": 300,
+    "hp": 160,
     "damage": 30,
     "color": "white",
     "interval": 5000,
