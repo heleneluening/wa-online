@@ -11,7 +11,6 @@ function touchHasMoved(event) {
 }
 
 
-
 //*** Initiation Gamestyle:
 
 //Spell choice
