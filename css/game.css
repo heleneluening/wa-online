@@ -3,11 +3,7 @@ main {
     background-color: darkgray;
     height: 100%;
     z-index: -2;
-    -webkit-user-drag: none;
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
+    position: sticky;
 }
 
 html, body {
