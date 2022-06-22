@@ -1,14 +1,14 @@
 // Touch
 
-const touchedElement = document.elementFromPoint(event.touches.clientX, event.touches.clientY);
 
-function touchmoveToMouseover() {
-    pointSelect(touchedElement);
+function touchHasStarted(event) {
+    console.log("Touch has started");
+    mouseDown();
 }
-
-document.addEventListener("touchmove", touchmoveToMouseover);
-document.addEventListener("touchstart", mouseDown);
-document.addEventListener("touchend", mouseUp);
+function touchHasMoved(event) {
+    pointSelect(document.elementFromPoint(event.touches[0].clientX, event.touches[0].clientY));
+    console.log("Touch has Moved");
+}
 
 
 

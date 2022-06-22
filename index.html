@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
     <meta charset="UTF-8">
-    <title>Muster Test</title>
+    <title>Mobil Test 6</title>
     <link rel="stylesheet" href="css/game.css" media="screen"/>
     <script src="js/enemy.js"></script> <!-- Enemy main-->
     <script src="js/player.js"></script> <!-- player main-->
@@ -12,7 +12,7 @@
     <script src="js/menu.js"></script> <!-- Game menu-->
 
 </head>
-<body onload="enemyHealthUpdate(); playerHealthUpdate();"> <!--TODO onload enemies hp move it somewhere else l8er-->
+<body onload="enemyHealthUpdate(); playerHealthUpdate();" ontouchstart="touchHasStarted(event)" ontouchmove="touchHasMoved(event)"> <!--TODO onload enemies hp move it somewhere else l8er-->
 
 
 <main onmouseup="mouseUp()" onmouseleave="mouseUp()">
