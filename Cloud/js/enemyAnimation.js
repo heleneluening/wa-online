@@ -1,8 +1,10 @@
-// animation for enemy movement
-let ident = null;
-let position = 20;
+/*This is the animation of the enemies spells,
+ it changes the top and left style of the css*/
+
+let ident = null; // interval
+let position = 20; // start postion of enemy Spell
 let enemyInterval = 1000; // how often enemy attacks
-let enemyDps;
+let enemyDps; // global interval variable
 
 function startOfAttacks() {
   enemyDps = setInterval(enemyCasts, enemyInterval)
@@ -12,7 +14,6 @@ function startOfAttacks() {
 function enemyCasts() {
 
   let enemyMovement = document.getElementById("enemyAttack");
-  // Debug console.log("TEST 4")
   clearInterval(enemyDps);
   ident = setInterval(movement, 10);
 
@@ -20,16 +21,14 @@ function enemyCasts() {
 
     enemyMovement.style.visibility = "visible";
     if (position >= 70) {
-      // Debug console.log("TEST END")
       position = 20
       clearInterval(ident);
-      startOfAttacks();
+      startOfAttacks(); // restarts the attack again after it reaches it goal, needed or bug
       playerHealth(); // player damage
     } else {
-      position++;
+      position++; // +1 postion => moves the div for 1vh
       enemyMovement.style.top = position + 'vh';
-      enemyMovement.style.left = position - 'vw';// % for left or right enemyAttack
-      // Debug console.log("TEST " + position);
+
     }
   }
 }

@@ -117,7 +117,6 @@ work
   border-width: 0vh 10vh 20vh 10vh;
   border-color: transparent transparent #ff0000 transparent;
   z-index: 3;
-  visibility: visible;
 
 
 }
@@ -169,6 +168,11 @@ work
   color: darkred;
 }
 
+#gameBack {
+  top: 30vh;
+  color: darkred;
+  visibility: hidden;
+}
 
 #gameMain {
   visibility: hidden;

@@ -2,7 +2,7 @@
 
 let a = 0; // test
 
-let id = null;
+let id = null; // interval variable
 let spellCount = []; // counts how often a symbol was drawn right
 let elem; // variable for creation of div
 
@@ -13,10 +13,10 @@ function spellAnimation() { //movement and style changing of #myAnimation
     elem.className = "spellAnimation"; // the div becomes the calls "spellAnimation"
 
 
-    let mainelem = document.getElementsByTagName("main"); // add the main to mainelem
+    let mainelem = document.getElementsByTagName("main"); // adds the main to mainelem
     mainelem.item(0).appendChild(elem); // make the created div a child element of main
 
-    switch (spellChoice) { // each case changes the style of the spell
+    switch (spellChoice) { //TODO each case changes the style of the spell, maybe make it into a class?
         case "Slash":
             console.log("Slash") // test delete
             elem.style.backgroundColor = "black"; // changes colour from spell

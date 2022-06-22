@@ -9,6 +9,7 @@
     <script src="js/controls.js"></script> <!-- Main Game controls-->
     <script src="js/animation.js"></script> <!-- Spell animation-->
     <script src="js/enemyAnimation.js"></script><!-- Enemy animation-->
+    <script src="js/menu.js"></script> <!-- Game menu-->
 
 </head>
 <body onload="enemyHealthUpdate(); playerHealthUpdate();" > <!--TODO onload enemies hp move it somewhere else l8er-->
@@ -17,9 +18,11 @@
 <main onmouseup="mouseUp()" onmouseleave="mouseUp()">
 <div>
     <div id="mainMenu">
+        <div id="gameBack" onclick="gameBack()">Back</div>
         <div id="gameStart" onclick="gameStart()">Start</div> <!-- main menu-->
         <div id="gameTutorial" onclick="gameTutorial()">Tutorial</div>
         <div id="gameQuit" onclick="gameQuit()">Exit</div>
+
 
     </div>
 
