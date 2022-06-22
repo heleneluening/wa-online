@@ -1,9 +1,8 @@
 /* Responsive Design  */
 main {
-    background-color: darkgray;
+    background-color: gray;
     height: 100%;
     z-index: -2;
-    position: fixed;
 }
 
 html, body {
@@ -14,13 +13,8 @@ html, body {
     background-color: black;
     color: white;
     overflow: hidden;
-
 }
 
-
-/**
-work
- */
 @media (min-aspect-ratio: 9/16) {
     /* Legt das Seitenverhältnis an einer gewissen Breite fest */
     main {
@@ -40,7 +34,7 @@ work
     height: 30vh;
     display: grid;
     grid-template-columns: auto auto auto;
-    background-color: grey;
+    background-color: #ccc;
     transform: translate(-50%, -50%);
     z-index: 5;
 }
@@ -66,7 +60,7 @@ work
     top: 50%;
     left: 50%;
     border-radius: 50%;
-    background-color: aqua;
+    background-color: black;
     height: 30%;
     width: 30%;
     margin: -15% 0 0 -15%;
@@ -151,28 +145,22 @@ work
     border-color: transparent transparent #200022 transparent;
 }
 
-#mainMenu { /* TODO make it responisve*/
+#mainMenu {
+    height: 100vh;
     position: center;
     font-size: 10vh;
 }
 
 #gameStart { /* this 3 are */
-    top: 30vh;
+    top: 10vh;
     color: darkred;
 }
 
 #gameTutorial {
-    top: 30vh;
     color: darkred;
 }
 
-#gameQuit {
-    top: 30vh;
-    color: darkred;
-}
-
-#gameBack {
-    top: 30vh;
+#gameWon {
     color: darkred;
     visibility: hidden;
 }
@@ -187,7 +175,6 @@ h1 {
     font-size: 4vh;
     top: 1vh;
     color: darkred;
-
 }
 
 h2 {
@@ -197,5 +184,28 @@ h2 {
     color: darkgreen;
 }
 
+h3 {
+    position: center;
+    font-size: 4vh;
+    color: darkred;
+}
 
+#mainTutorial {
+    visibility: hidden;
+    margin: auto;
+
+}
+
+#tutorialPic {
+    margin: inherit;
+    width: 45vh;
+    height: 45vh;
+    content: url("big tutorial.png");
+}
+
+p {
+    margin: inherit;
+    font-size: 2.5vh;
+    color: darkred;
+}
 

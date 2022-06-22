@@ -1,4 +1,4 @@
-/* menu of the game, onclick it makes visible and removes the divs*/
+/* menu of the game, onclick it makes visible and removes the divs and adds*/
 
 let start = false; // false so it can become true after click
 let tutorial = false;
@@ -27,40 +27,43 @@ function gameBack() {
 
 function gameMenu() { // gameMenu
 
-    let menuStart = document.getElementById("gameStart");
-    let menuTutorial = document.getElementById("gameTutorial");
-    let menuQuit = document.getElementById("gameQuit");
-    let menuBack = document.getElementById("gameBack");
-    let gameMain = document.getElementById("gameMain");
+    /*For menu Clicks*/
+
+    let menuBack = document.getElementById("gameBack"); // this is the back "button"
+    let gameMain = document.getElementById("gameMain"); // this is the whole game
+    let pageOfTutorial = document.getElementById("mainTutorial"); // this is the div of the tutorial pics are here
+    let pageOfMenu = document.getElementById("mainMenu"); // this is the div of the whole menu
+
 
     if (start) { //game start
         gameMain.style.visibility = "visible"; // makes the game visible = game start
+        pageOfMenu.style.height = "0px";
+        pageOfMenu.style.visibility = "hidden";
+        pageOfTutorial.style.height = "0px";
+        pageOfTutorial.style.visibility = "hidden";
         startOfAttacks(); // start the attacks of the enemy
-        menuStart.remove(); // removes the div so they don't take space
-        menuTutorial.remove();
-        menuQuit.remove();
         whichEnemy(0); // enemy spawn
+        start = false;
 
     }
     if (tutorial) { //tutorial
-        console.log("Tutorial");
-        menuStart.style.visibility = "hidden"; // it has to done with visibility, so you can go back and start the game
-        menuTutorial.style.visibility = "hidden";
-        menuQuit.style.visibility = "hidden";
+
+        pageOfMenu.style.visibility = "hidden"; // makes the menu hidden and the back div visible
+        pageOfTutorial.style.height = "visible";// makes the tutorial pictures visible
         menuBack.style.visibility = "visible"; // becomes visible so you can click on it
 
-        if (back) { // the back button
-            tutorial = false; // sets it back to false so the if of tutorial doesnt trigger
-            menuStart.style.visibility = "visible";
-            menuTutorial.style.visibility = "visible";
-            menuQuit.style.visibility = "visible";
-            menuBack.style.visibility = "hidden";
+        if (back) {
+            pageOfMenu.style.visibility = "visible";  //makes the menu visible again
+            pageOfTutorial.style.visibility = "hidden";// makes the tutorial pictures visible
+            menuBack.style.visibility = "hidden"; // back becomes visible so you can click on it
+            tutorial = false;
         }
-
     }
     if (quit) { //quit
         window.close();
     }
 }
+
+
 
 

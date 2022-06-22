@@ -43,14 +43,32 @@ function whichEnemy(level) {
         enemyInterval = enemyLib[level].interval;
 
         enemyHealthUpdate();
-    } else { // TODO is this needed?
-        alert("Herzlichen Glückwunsch!")
-        enemyHp = 0;
+    } else {// wining the game
+        let restart = document.getElementById("gameWon");
+        let playerSpell = document.getElementsByClassName("spellAnimation");
+        let mainMenu = document.getElementById("mainMenu");
+
         level = 0;
-        whichEnemy();
-        clearInterval()
+        enemyHealthUpdate();
+        playerHealthUpdate();
+
+        restart.style.visibility = "visible";
+        restart.style.height = "100vh";
+        gameMain.style.visibility = "hidden";
+        playerSpell.style.visibility = "hidden";
+
+        setTimeout(gameRestart, 5000);
     }
 
+}
+
+function gameRestart() {
+    let mainMenu = document.getElementById("mainMenu");
+    let restart = document.getElementById("gameWon");
+
+    mainMenu.style.visibility = "visible"
+    restart.style.visibility = "hidden";
+    restart.style.height = "0px";
 }
 
 function enemyTakesDamage() {
@@ -111,20 +129,16 @@ function enemyHealthUpdate() {
     document.getElementById("eHp").innerHTML = enemyHp;
 }
 
-function enemyDeath() { //
+function enemyDeath() {//
     if (enemyHp <= 0) {
         enemyHp = 0; // set to 0 so it will never show negative Hp
         level++; // +1 when enemy killed
         whichEnemy(level); // new stage & new enemy
         clearInterval() // TODO find out why we clear the Interval here
+        document.getElementById("enemyAttack").style.visibility = "hidden";
     }
-}
 
-function enemyAttack() {
-    console.log("TEST ATTACK");
-    enemyCasts();
 }
-
 
 
 

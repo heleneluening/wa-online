@@ -1,3 +1,5 @@
+/*for Player*/
+
 let playerHp = 1000;
 
 function playerHealth() {
@@ -20,14 +22,12 @@ function playerDeath() {
         clearInterval(enemyDps);
         console.log("you died");
         endingScreen.style.visibility = "hidden";
-        enemyMovement.style.visibility = "hidden";
+        enemyMovement.style.visibility ="hidden";
 
 
         level;
     }
 }
-
-
 
 
 

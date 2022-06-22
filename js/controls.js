@@ -28,6 +28,7 @@ let mouseIsDown = false;
 
 // symbollib: ein array, dass alle Symbole sammelt
 const symbolLib = [];
+const symInput = new Set();
 
 class symbol {
     constructor(type, pattern) {
@@ -37,15 +38,12 @@ class symbol {
     }
 }
 
-const symInput = new Set();
 fetch("js/symbols.json").then(res => res.json()).then(symbolData => {
     for (const key in symbolData) {
         for (const combination of symbolData[key]) {
             new symbol(key, combination)
         }
     }
-
-
 
     console.log(symbolLib);
 })

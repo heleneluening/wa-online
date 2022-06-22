@@ -1,9 +1,9 @@
-<!DOCTYPE html> <!--Game HTML-->
+<!DOCTYPE html> <!-- The Game HTML of our game-->
 <html lang="de">
 <head>
     <meta charset="UTF-8">
     <meta content="minimum-scale=1.0, height=device-height, maximum-scale=1, user-scalable=no" name="viewport" />
-    <title>Mobil Test 7</title>
+    <title>Spiel</title>
     <link rel="stylesheet" href="css/game.css" media="screen"/>
     <script src="js/enemy.js"></script> <!-- Enemy main-->
     <script src="js/player.js"></script> <!-- player main-->
@@ -13,7 +13,8 @@
     <script src="js/menu.js"></script> <!-- Game menu-->
 
 </head>
-<body onload="enemyHealthUpdate(); playerHealthUpdate();" ontouchstart="mouseDown()" ontouchmove="touchHasMoved(event)" ontouchend="mouseUp()"> <!--TODO onload enemies hp move it somewhere else l8er-->
+<body onload="enemyHealthUpdate(); playerHealthUpdate();" ontouchstart="mouseDown()" ontouchmove="touchHasMoved(event)"
+      ontouchend="mouseUp()"> <!--TODO onload enemies hp move it somewhere else l8er-->
 
 
 <main onmouseup="mouseUp()" onmouseleave="mouseUp()">
@@ -22,11 +23,15 @@
             <div id="gameBack" onclick="gameBack()">Back</div>
             <div id="gameStart" onclick="gameStart()">Start</div> <!-- main menu-->
             <div id="gameTutorial" onclick="gameTutorial()">Tutorial</div>
-            <div id="gameQuit" onclick="gameQuit()">Exit</div>
-
-
+            <div id="gameWon">YOU WON</div>
         </div>
 
+
+        <div id="mainTutorial">
+            <p> Zeichne die abgebildeten Symbole, aber beachte
+                nicht jeder Zauber wirkt gegen jeden Gegner gleich.</p>
+            <div id="tutorialPic"></div>
+        </div>
 
         <div id="gameMain"> <!-- div for whole game-->
 
@@ -38,8 +43,8 @@
             </div> <!-- enemy-->
 
 
-            <h1> HP: <span id="eHp"></span></h1> <!-- enemy hp-->
-            <h2>HP: <span id="pHp"></span></h2> <!-- player hp-->
+            <h1>Enemy <br>HP: <span id="eHp"></span></h1> <!-- enemy hp-->
+            <h2>Player <br>HP: <span id="pHp"></span></h2> <!-- player hp-->
 
             <div id="muster-container">
                 <div class="grid-container" onMouseDown="mouseDown()" onmouseup="mouseUp()">
@@ -81,11 +86,9 @@
                              onmousedown="pointClicked(this)"></div>
                     </div>
                 </div>
-            </div><!--creates the control field-->
+            </div>
         </div>
     </div>
 </main>
 </body>
 </html>
-
-
