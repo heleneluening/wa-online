@@ -181,14 +181,17 @@ work
 
 
 h1 {
+
     position: absolute;
+    padding: 1vh;
     font-size: 4vh;
-    top: 1vh;
+    top: 5vh;
     color: darkred;
 }
 
 h2 {
     position: absolute;
+    padding: 1vh;
     font-size: 4vh;
     top: 20vh;
     color: darkgreen;
