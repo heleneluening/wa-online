@@ -1,26 +1,17 @@
 let enemyHp; // life of enemy
 let enemyDamage; // damage of enemy
+let enemyType;
 let level = 0; // level stage
 let vh = 42
 window.addEventListener("load", () => {
     vh = (document.body.clientHeight / 100);
 })
+
 let enemyLib = [];
 
-/*
-class enemy {
-  constructor(enemyHP, enemyDamage, enemyColor, enemyInterval) {
-    this.enemyHP = enemyHP;
-    this.enemyDamage = enemyDamage;
-    this.enemyColor = "transparent transparent " + enemyColor + " transparent";
-    this.enemyInterval = enemyInterval;
-    enemyLib.push(this);
-  }
-}
 
- */
-
-/* let enemiesJson = toString([{"hp": 100, "damage": 10, "color": "green", "interval": 10000}, //TODO IS not needed
+/* In case Fetch fails
+let enemiesJson = toString([{"hp": 100, "damage": 10, "color": "green", "interval": 10000},
   {"hp": 150, "damage": 10, "color": "white", "interval": 10000},
   {"hp": 200, "damage": 15, "color": "pink", "interval": 5000},
   {"hp": 200, "damage": 20, "color": "purple", "interval": 5000},
@@ -35,8 +26,9 @@ fetch("js/enemies.json").then(data => data.json()).then(data => {
     enemyLib = data;
     console.log("yay fetch")
 }).catch(it => {
-    console.log(e);
-    enemyLib = JSON.parse(enemiesJson);
+  console.log(e);
+  // In case fetch fails
+  // enemyLib = JSON.parse(enemiesJson);
 })
 
 function whichEnemy(level) {
@@ -44,42 +36,73 @@ function whichEnemy(level) {
     if (level < enemyLib.length) {
         let enemy = document.querySelector(".myEnemy"); //
 
-        enemyHp = enemyLib[level].hp;
-        enemyDamage = enemyLib[level].damage;
-        enemy.style.borderColor = enemyLib[level].color;
-        enemyInterval = enemyLib[level].interval;
+    enemyHp = enemyLib[level].hp;
+    enemyDamage = enemyLib[level].damage;
+    enemy.style.borderColor = "transparent transparent " + enemyLib[level].color + " transparent";
+    enemyType = enemyLib[level].type;
+    enemyInterval = enemyLib[level].interval;
 
-        enemyHealthUpdate();
-    } else { // TODO is this needed?
-        for (let i = Math.round(Math.random() * 12); i > 0; i--)
-            alert("Das Spiel ist vorbei!!! Noch " + i + " mal klicken zum Weiterspielen")
-        enemyHp = 0;
-        level = 0;
-        whichEnemy();
-        clearInterval()
-    }
+    enemyHealthUpdate();
+  } else { // TODO is this needed?
+    alert("Herzlichen Glückwunsch!")
+    enemyHp = 0;
+    level = 0;
+    whichEnemy();
+    clearInterval()
+  }
 
 }
 
-function enemyTakesDamage() { //TODO program resistences and change the damage
-    switch (spellChoice) {
-        case "Slash":
-            enemyHp = enemyHp - 10;
-            break;
-        case "Lightning":
-            enemyHp = enemyHp - 20;
-            break;
-        case "Ice":
-            enemyHp = enemyHp - 25;
-            break;
-        case "Ground":
-            enemyHp = enemyHp - 40;
-            break;
-    }
+function enemyTakesDamage() {
+  switch (spellChoice) {
+    case "Slash":
+      enemyHp = enemyHp - 10;
+      break;
+    case "Lightning":
+      enemyHp = enemyHp - lightningSpellDamage();
+      break;
+    case "Ice":
+      enemyHp = enemyHp - iceSpellDamage();
+      break;
+    case "Ground":
+      enemyHp = enemyHp - groundSpellDamage();
+      break;
+  }
 
     enemyDeath();
     enemyHealthUpdate();
 
+}
+
+function lightningSpellDamage() {
+  switch (enemyType) {
+    case "Lightning":
+      return 10;
+    case "Ice":
+      return 40;
+    case "Ground":
+      return 10;
+  }
+}
+function groundSpellDamage() {
+  switch (enemyType) {
+    case "Lightning":
+      return 40;
+    case "Ice":
+      return 10;
+    case "Ground":
+      return 10;
+  }
+}
+function iceSpellDamage() {
+  switch (enemyType) {
+    case "Lightning":
+      return 10;
+    case "Ice":
+      return 10;
+    case "Ground":
+      return 40;
+  }
 }
 
 function enemyHealthUpdate() {
