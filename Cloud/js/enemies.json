@@ -2,49 +2,57 @@
   {
     "hp": 100,
     "damage": 10,
-    "color": "transparent transparent green transparent",
-    "interval": 10000
+    "color": "#664008",
+    "interval": 10000,
+    "type": "Ground"
   },
   {
     "hp": 150,
     "damage": 10,
-    "color": "transparent transparent whitesmoke transparent",
-    "interval": 10000
+    "color": "deepskyblue",
+    "interval": 10000,
+    "type": "Ice"
   },
   {
     "hp": 200,
     "damage": 15,
-    "color": "transparent transparent pink transparent",
-    "interval": 5000
+    "color": "yellow",
+    "interval": 5000,
+    "type": "Lightning"
   },
   {
     "hp": 200,
     "damage": 20,
-    "color": "transparent transparent purple transparent",
-    "interval": 5000
+    "color": "#664008",
+    "interval": 5000,
+    "type": "Ground"
   },
   {
     "hp": 250,
     "damage": 20,
-    "color": "transparent transparent yellow transparent",
-    "interval": 10000
+    "color": "deepskyblue",
+    "interval": 10000,
+    "type": "Ice"
   },
   {
     "hp": 250,
     "damage": 25,
-    "color": "transparent transparent blue transparent",
-    "interval": 10000
+    "color": "yellow",
+    "interval": 10000,
+    "type": "Lightning"
   },
   {
     "hp": 300,
     "damage": 30,
-    "color": "transparent transparent orange transparent",
-    "interval": 5000
+    "color": "#664008",
+    "interval": 5000,
+    "type": "Ground"
   },
   {
     "hp": 350,
     "damage": 30,
-    "color": "transparent transparent red transparent",
-    "interval": 5000
+    "color": "deepskyblue",
+    "interval": 5000,
+    "type": "Ice"
   }
 ]
