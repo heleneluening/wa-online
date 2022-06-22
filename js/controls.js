@@ -2,9 +2,9 @@
 
 const touchedElement = document.elementFromPoint(Touch.clientX, Touch.clientY);
 
-document.on("touchmove", touchedElement[0].onmouseover);
-document.on("touchstart", touchedElement[0].onmousedown);
-document.on("touchend", touchedElement[0].onmouseup);
+document.addEventListener("touchmove", touchedElement[0].onmouseover);
+document.addEventListener("touchstart", touchedElement[0].onmousedown);
+document.addEventListener("touchend", touchedElement[0].onmouseup);
 
 //*** Initiation Gamestyle:
 
