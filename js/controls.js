@@ -1,10 +1,16 @@
 // Touch
 
-const touchedElement = document.elementFromPoint(Touch.clientX, Touch.clientY);
+const touchedElement = document.elementFromPoint(event.touches.clientX, event.touches.clientY);
 
-document.addEventListener("touchmove", touchedElement.onmouseover);
-document.addEventListener("touchstart", touchedElement.onmousedown);
-document.addEventListener("touchend", touchedElement.onmouseup);
+function touchmoveToMouseover() {
+    pointSelect(touchedElement);
+}
+
+document.addEventListener("touchmove", touchmoveToMouseover);
+document.addEventListener("touchstart", mouseDown);
+document.addEventListener("touchend", mouseUp);
+
+
 
 //*** Initiation Gamestyle:
 
