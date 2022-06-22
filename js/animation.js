@@ -54,7 +54,7 @@ function spellAnimation() { //movement and style changing of #myAnimation
 function frame() { // function for the movement of spells
 
     for (let i = 0; i < spellCount.length; i++) {
-        if (spellCount[i].getAttribute("pos") <= 5) { // checks if the "spell" reached it target 0 for interface end
+        if (spellCount[i].getAttribute("pos") <= 25) { // checks if the "spell" reached it target 0 for interface end
             spellCount[i].remove(); // removes the object
             spellCount.shift(); // removes the first element of array and returns it
 

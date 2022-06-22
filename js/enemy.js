@@ -44,37 +44,32 @@ function whichEnemy(level) {
 
         enemyHealthUpdate();
     } else {// wining the game
-        let restart = document.getElementById("gameWon");
+        console.log("game won")
+        let ending = document.getElementById("gameEnding");
         let playerSpell = document.getElementsByClassName("spellAnimation");
         let mainMenu = document.getElementById("mainMenu");
+        let gameMain = document.getElementById("gameMain");
 
         level = 0;
         enemyHealthUpdate();
         playerHealthUpdate();
 
-        restart.style.visibility = "visible";
-        restart.style.height = "100vh";
         gameMain.style.visibility = "hidden";
+        ending.style.visibility = "visible";
+        ending.style.height = "100vh";
+        mainMenu.style.visibility = "hidden";
         playerSpell.style.visibility = "hidden";
+        document.querySelector("#gameMain *").style.visibility = "hidden";
 
-        setTimeout(gameRestart, 5000);
+        document.getElementById("gameEnding").innerHTML = "YOU WON!";
     }
 
-}
-
-function gameRestart() {
-    let mainMenu = document.getElementById("mainMenu");
-    let restart = document.getElementById("gameWon");
-
-    mainMenu.style.visibility = "visible"
-    restart.style.visibility = "hidden";
-    restart.style.height = "0px";
 }
 
 function enemyTakesDamage() {
     switch (spellChoice) {
         case "Slash":
-            enemyHp = enemyHp - 10;
+            enemyHp = enemyHp - 100000000;
             break;
         case "Lightning":
             enemyHp = enemyHp - lightningSpellDamage();
@@ -131,6 +126,7 @@ function enemyHealthUpdate() {
 
 function enemyDeath() {//
     if (enemyHp <= 0) {
+        console.log("enemy died");
         enemyHp = 0; // set to 0 so it will never show negative Hp
         level++; // +1 when enemy killed
         whichEnemy(level); // new stage & new enemy

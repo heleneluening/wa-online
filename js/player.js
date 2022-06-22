@@ -13,19 +13,24 @@ function playerHealthUpdate() {
 }
 
 function playerDeath() {
-    let endingScreen = document.getElementById("gameMain"); // for hidding game again after dedath
-    let enemyMovement = document.getElementById("enemyAttack");
-
     if (playerHp <= 0) {
+
+        let ending = document.getElementById("gameEnding");
+        let mainMenu = document.getElementById("mainMenu");
+        let gameMain = document.getElementById("gameMain");
+
         playerHp = 0; // so it doesnt your life cant fall under 0
         playerHealthUpdate(); // updates your hp
-        clearInterval(enemyDps);
-        console.log("you died");
-        endingScreen.style.visibility = "hidden";
-        enemyMovement.style.visibility ="hidden";
+        enemyHealthUpdate(); // updates the healt of both
+        clearInterval(enemyDps); // stops the enemy's attack from being cast
 
+        ending.style.visibility = "visible"; // makes the end screen visible
+        ending.style.height = "100vh";
+        mainMenu.style.visibility = "hidden";
+        gameMain.style.visibility = "hidden";
+        document.getElementById("enemyAttack").remove();
 
-        level;
+        document.getElementById("gameEnding").innerHTML = "YOU DIED!";
     }
 }
 
