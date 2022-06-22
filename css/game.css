@@ -1,4 +1,4 @@
-/* Responsive Design  */
+/* Responsive Design and CSS  */
 main {
     background-color: gray;
     height: 100%;
@@ -15,6 +15,10 @@ html, body {
     overflow: hidden;
 }
 
+
+/**
+work
+ */
 @media (min-aspect-ratio: 9/16) {
     /* Legt das Seitenverhältnis an einer gewissen Breite fest */
     main {
@@ -145,7 +149,7 @@ html, body {
     border-color: transparent transparent #200022 transparent;
 }
 
-#mainMenu {
+#mainMenu { /* TODO make it responisve*/
     height: 100vh;
     position: center;
     font-size: 10vh;
@@ -160,7 +164,13 @@ html, body {
     color: darkred;
 }
 
-#gameWon {
+#gameEnding {
+    color: darkred;
+    visibility: hidden;
+    height: 0px;
+}
+
+#gameBack {
     color: darkred;
     visibility: hidden;
 }
@@ -193,18 +203,21 @@ h3 {
 #mainTutorial {
     visibility: hidden;
     margin: auto;
+    position: relative;
+    top: 20vh;
 
 }
 
 #tutorialPic {
-    margin: inherit;
+    margin: auto;
     width: 45vh;
     height: 45vh;
     content: url("big tutorial.png");
 }
 
 p {
-    margin: inherit;
+    margin: auto;
+    padding: 2vh;
     font-size: 2.5vh;
     color: darkred;
 }

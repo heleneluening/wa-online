@@ -34,13 +34,16 @@ function gameMenu() { // gameMenu
     let pageOfTutorial = document.getElementById("mainTutorial"); // this is the div of the tutorial pics are here
     let pageOfMenu = document.getElementById("mainMenu"); // this is the div of the whole menu
 
-
     if (start) { //game start
+
+
         gameMain.style.visibility = "visible"; // makes the game visible = game start
-        pageOfMenu.style.height = "0px";
         pageOfMenu.style.visibility = "hidden";
-        pageOfTutorial.style.height = "0px";
         pageOfTutorial.style.visibility = "hidden";
+
+        pageOfMenu.style.height = "0px";
+        pageOfTutorial.style.height = "0px";
+
         startOfAttacks(); // start the attacks of the enemy
         whichEnemy(0); // enemy spawn
         start = false;
@@ -48,8 +51,9 @@ function gameMenu() { // gameMenu
     }
     if (tutorial) { //tutorial
 
+        pageOfTutorial.style.visibility = "visible"
+        pageOfMenu.style.height = "0px";
         pageOfMenu.style.visibility = "hidden"; // makes the menu hidden and the back div visible
-        pageOfTutorial.style.height = "visible";// makes the tutorial pictures visible
         menuBack.style.visibility = "visible"; // becomes visible so you can click on it
 
         if (back) {
@@ -59,11 +63,5 @@ function gameMenu() { // gameMenu
             tutorial = false;
         }
     }
-    if (quit) { //quit
-        window.close();
-    }
+
 }
-
-
-
-
